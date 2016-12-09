@@ -1,0 +1,92 @@
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\bin\Ext.Net.dll
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.dll
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\bin\Transformer.NET.dll
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.dll
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\inetpub\wwwroot\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.csprojResolveAssemblyReference.cache
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\bin\Ext.Net.dll
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.dll
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\bin\Transformer.NET.dll
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.dll
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.csprojResolveAssemblyReference.cache
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Users\N000134527\Desktop\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\Permissions_Control\bin\Transformer.NET.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\Permissions_Control\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\bin\Transformer.NET.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\bin\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\bin\NPOI.dll
+C:\Documents and Settings\N000161273\桌面\Permissions_Control\Permissions_Control\sample\Permissions_Control\Permissions_Control\bin\NPOI.xml
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\NPOI.xml
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\DocumentFormat.OpenXml.dll
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\SpreadsheetLight.xml
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.dll
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.dll
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Transformer.NET.dll
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.xml
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.xml
+C:\Documents and Settings\N000161273\桌面\sample\Permissions_Control\Permissions_Control\bin\Transformer.NET.xml
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\DocumentFormat.OpenXml.dll
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.dll
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.dll
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Transformer.NET.dll
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.xml
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.xml
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\NPOI.xml
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\SpreadsheetLight.xml
+C:\Documents and Settings\N000161273\桌面\homework\Permissions_Control\Permissions_Control\bin\Transformer.NET.xml
+C:\Documents and Settings\N000161273\桌面\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\N000161273\桌面\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Documents and Settings\N000161273\桌面\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\DocumentFormat.OpenXml.dll
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.xml
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.xml
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\NPOI.xml
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\SpreadsheetLight.xml
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\bin\Transformer.NET.xml
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb
+C:\Users\n000161273\Desktop\Work\homework\homework.2016.11.15\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.csprojResolveAssemblyReference.cache
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\Permissions_Control.dll
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\Permissions_Control.pdb
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\DocumentFormat.OpenXml.dll
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\Ext.Net.Utilities.xml
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\Newtonsoft.Json.xml
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\NPOI.xml
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\SpreadsheetLight.xml
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\bin\Transformer.NET.xml
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.csprojResolveAssemblyReference.cache
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.dll
+C:\Users\n000161273\Documents\GitHub\Permissions_Control\Permissions_Control\Permissions_Control\obj\Debug\Permissions_Control.pdb

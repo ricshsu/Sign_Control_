@@ -1,0 +1,27 @@
+﻿
+.main_body {
+    background-image: url(../Files/backlogin.jpeg);
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    padding-top: 20px;
+}
+
+.container {
+    width: 406px;
+    max-width: 406px;
+    margin: 0 auto;
+}
+
+.divcss-right{float:right} 
+.divcss-left{float:left} 
+
+/*grid table color*/
+.positive { color: green; }
+.negative { color: red; }
+
+
+.R_Child1
+{background-color:#00B8CA;}
+
+
+
+ 
