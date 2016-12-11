@@ -22,7 +22,7 @@
 </script>
 
 </head>
-<body class =R_Child1>
+<body class ="R_Child1">
     <form id="signup_" runat="server">
     <ext:ResourceManager ID="ResourceManager1" runat="server" />
         <ext:Store ID="Store1" runat="server" PageSize="19" AutoSync="true">
@@ -142,48 +142,50 @@
                         </Items>
                 <%--點div 並顯示在欄位上--%>
 
+           
+                    <ext:FormPanel ID="UserForm2" Layout="Column" runat="server" Icon="User" Frame="true"
+                             Title="選取資料">
+                        <FieldDefaults LabelAlign="Right" AllowBlank="false" />
+                        <Items>
+                            <ext:Panel ID="Panel9" runat="server" Border="false" ColumnWidth="1" Layout="ColumnLayout" BodyStyle="padding:5px">
+                                <Items>
+                                    <ext:TextField ID="Text_Id" runat="server" FieldLabel="ID" Name="ID" ReadOnly="true"  />
+                                    <ext:TextField ID="Text_Customer_ID" runat="server" FieldLabel="Customer_ID" Name="Customer_ID" />
+                                </Items>
+                            </ext:Panel>
+                        </Items>
+
   
-                <ext:FormPanel ID="UserForm2" Layout="Column" runat="server" Icon="User" Frame="true"
-                         Title="選取資料">
-                    <FieldDefaults LabelAlign="Right" AllowBlank="false" />
-                    <Items>
-                        <ext:Panel ID="Panel9" runat="server" Border="false" ColumnWidth="1" Layout="ColumnLayout" BodyStyle="padding:5px">
-                            <Items>
-                                <ext:TextField ID="Text_Id" runat="server" FieldLabel="ID" Name="ID" ReadOnly="true"  />
-                                <ext:TextField ID="Text_Customer_ID" runat="server" FieldLabel="Customer_ID" Name="Customer_ID" />
-                            </Items>
-                        </ext:Panel>
-                    </Items>
+                     </ext:FormPanel>
+               
+                        <%-- update date --%>
+                                <div class="divcss-right">
+                                 <ext:Button runat="server" ID="btnOK" Text="修改" Icon="Accept">
+                                    <DirectEvents>
+                                        <Click OnEvent="btnUpdae_DirectClick">
+                                        <EventMask ShowMask="true" Msg="處理中..."></EventMask>
+                                         <ExtraParams>
+                                                <ext:Parameter Name="Text_Customer_ID" runat="server" Value="Customer_ID"></ext:Parameter>
+                                         </ExtraParams>
+                                         </Click>
+                                    </DirectEvents>
+                                </ext:Button>                   
+                                </div>
+                                        </div> 
+                                <div class="divcss-right">
+                                <ext:Button runat="server" ID="Button1" Text="刪除" Icon="Cross">
+                                    <DirectEvents>
+                                        <Click OnEvent="btnDel_DirectClick">
+                                        <EventMask ShowMask="true" Msg="處理中..."></EventMask>
+                                         <ExtraParams>
+                                                <ext:Parameter Name="Text_Customer_ID" runat="server" Value="Customer_ID"></ext:Parameter>
+                                         </ExtraParams>
+                                         </Click>
+                                    </DirectEvents>
+                                </ext:Button>  
+ 
 
-
-                 </ext:FormPanel>
-                    <%-- update date --%>
-                    <div class="divcss-right">
-                     <ext:Button runat="server" ID="btnOK" Text="修改" Icon="Accept">
-                        <DirectEvents>
-                            <Click OnEvent="btnUpdae_DirectClick">
-                            <EventMask ShowMask="true" Msg="處理中..."></EventMask>
-                             <ExtraParams>
-                                    <ext:Parameter Name="Text_Customer_ID" runat="server" Value="Customer_ID"></ext:Parameter>
-                             </ExtraParams>
-                             </Click>
-                        </DirectEvents>
-                    </ext:Button>                   
-                    </div>
-                    
-                    <div class="divcss-right">
-                    <ext:Button runat="server" ID="Button1" Text="刪除" Icon="Cross">
-                        <DirectEvents>
-                            <Click OnEvent="btnDel_DirectClick">
-                            <EventMask ShowMask="true" Msg="處理中..."></EventMask>
-                             <ExtraParams>
-                                    <ext:Parameter Name="Text_Customer_ID" runat="server" Value="Customer_ID"></ext:Parameter>
-                             </ExtraParams>
-                             </Click>
-                        </DirectEvents>
-                    </ext:Button>  
-                    </div>  
-      
+            
   
     </form>
 </body>

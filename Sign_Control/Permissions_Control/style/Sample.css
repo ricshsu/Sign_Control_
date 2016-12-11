@@ -19,8 +19,14 @@
 .negative { color: red; }
 
 
-.R_Child1
-{background-color:#00B8CA;}
+.R_Child1 
+{    background-color:#00B8CA;
+  }
+.line
+{
+        border:2px blue dashed;
+    margin-bottom:15px;
+    }
 
 
 
