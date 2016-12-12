@@ -7,7 +7,7 @@
 // </自動產生的>
 //------------------------------------------------------------------------------
 
-namespace EDA_IBF {
+namespace EDA_Sign {
     
     
     public partial class sample_3 {
@@ -317,6 +317,24 @@ namespace EDA_IBF {
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
         protected global::Ext.Net.TextField Text_Customer_ID;
+        
+        /// <summary>
+        /// Text_EDA_Item 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_EDA_Item;
+        
+        /// <summary>
+        /// Text_Part_Id 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_Part_Id;
         
         /// <summary>
         /// btnOK 控制項。

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R.aspx.cs" Inherits="EDA_IBF.Sample_" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R.aspx.cs" Inherits="EDA_Sign.Sample_" %>
 <%@ Register Assembly="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Namespace="System.Web.UI.WebControls" TagPrefix="asp" %>
 
 <%@ Import Namespace="System.Data" %>
@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<link rel=stylesheet type="text/css" href="./style/Sample.css">
+<link rel=stylesheet type="text/css" href="./style/Sign_style.css">
 </head>
 
 
@@ -49,12 +49,6 @@
                         <LoadMask ShowMask="true" />
                     </Loader>
                 </ext:Panel>
-
-                <ext:Panel ID="Panel1" runat="server" Title="匯入檔案">
-                    <Loader ID="Loader1" runat="server" Url="Main_R_child1_.aspx" Mode="Frame">
-                        <LoadMask ShowMask="true" />
-                    </Loader>
-                </ext:Panel> 
             </Items>
          </ext:TabPanel>
  <%--樣板 --%>  

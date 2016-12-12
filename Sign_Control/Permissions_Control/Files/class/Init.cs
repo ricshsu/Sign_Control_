@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace EDA_IBF
+namespace EDA_Sign
 {
 	public class Init : System.Web.UI.Page
 	{

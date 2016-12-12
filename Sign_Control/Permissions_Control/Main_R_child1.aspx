@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R_child1.aspx.cs" Inherits="EDA_IBF.sample_3" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R_child1.aspx.cs" Inherits="EDA_Sign.sample_3" %>
 <%@ Register Assembly="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Namespace="System.Web.UI.WebControls" TagPrefix="asp" %>
 
 <%@ Import Namespace="System.Data" %>
@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<link rel=stylesheet type="text/css" href="./style/Sample.css">
+<link rel=stylesheet type="text/css" href="./style/Sign_style.css">
     <title></title>
 
 <script>
@@ -125,6 +125,8 @@
                                                              <ExtraParams>
                                                                  <ext:Parameter Name="ID" Value="record.get('ID')" Mode="Raw" /> 
                                                                  <ext:Parameter Name="Customer_ID" Value="record.get('Customer_ID')" Mode="Raw" /> 
+                                                                 <ext:Parameter Name="EDA_Item" Value="record.get('EDA_Item')" Mode="Raw" /> 
+                                                                 <ext:Parameter Name="Part_Id" Value="record.get('Part_Id')" Mode="Raw" /> 
                                                              </ExtraParams>
                                                          </Select>
                                                      </DirectEvents>
@@ -151,6 +153,9 @@
                                 <Items>
                                     <ext:TextField ID="Text_Id" runat="server" FieldLabel="ID" Name="ID" ReadOnly="true"  />
                                     <ext:TextField ID="Text_Customer_ID" runat="server" FieldLabel="Customer_ID" Name="Customer_ID" />
+                                    <ext:TextField ID="Text_EDA_Item" runat="server" FieldLabel="EDA_Item" Name="EDA_Item" ReadOnly="true"  />
+                                    <ext:TextField ID="Text_Part_Id" runat="server" FieldLabel="Part_Id" Name="Part_Id" />
+
                                 </Items>
                             </ext:Panel>
                         </Items>

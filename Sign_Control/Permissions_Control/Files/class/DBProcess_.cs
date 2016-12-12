@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 
-namespace EDA_IBF
+namespace EDA_Sign
 {
 	public class DBProcess_
 	{
@@ -85,7 +85,36 @@ namespace EDA_IBF
             return _Msg;
         }
 
+        //單筆資料更新
         public static string Updata_Data(int ID, string Customer_ID, string man, ref string _Msg)
+        {
+            sql = " UPDATE eSPC.dbo.Sample_for_test_2016 ";
+            sql += "SET Customer_ID='" + Customer_ID + "'";
+            sql += "WHERE ID='" + ID + "'";
+            sql += " ;";
+
+            lisSQL.Clear();
+            lisSQL.Add(sql);
+            sql_temp = sql;
+            _Msg = "";
+            GFun.ExSql3(lisSQL, ref _Msg);
+
+            if (_Msg != "") return _Msg;
+
+            sql = " INSERT INTO EDA.dbo.Access_Permission_LOG_Info";
+            sql += " (TableName, Action, Details, Revisor, Revise_Date)";
+            sql += " VALUES('Access_Permission_GP_Info','M','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+
+            lisSQL.Clear();
+            lisSQL.Add(sql);
+            _Msg = "";
+            GFun.ExSql3(lisSQL, ref _Msg);
+
+            return _Msg;
+        }
+
+        //刪除資料
+        public static string Deldata_Data(int ID, string Customer_ID, string man, ref string _Msg)
         {
             sql = " UPDATE eSPC.dbo.Sample_for_test_2016 ";
             sql += "SET Customer_ID='" + Customer_ID + "'";

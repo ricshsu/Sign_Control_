@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
-using EDA_IBF;
+using EDA_Sign;
 using System.Data;
 using Permissions_Control;
 
@@ -29,7 +29,7 @@ namespace Permissions_Control.ws
         public Boolean CheckUser(string Name, string Password)
         {
           
-            dtTemp = DBProcess.Get_Login(Name, Password);
+          //  dtTemp = DBProcess.Get_Login(Name, Password);
 
             if (dtTemp.Rows.Count == 1 && dtTemp.Rows[0]["Password"].ToString() == Password)
             {

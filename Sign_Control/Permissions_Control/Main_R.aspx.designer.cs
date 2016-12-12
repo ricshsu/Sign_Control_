@@ -7,7 +7,7 @@
 // </自動產生的>
 //------------------------------------------------------------------------------
 
-namespace EDA_IBF {
+namespace EDA_Sign {
     
     
     public partial class Sample_ {
@@ -74,14 +74,5 @@ namespace EDA_IBF {
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
         protected global::Ext.Net.Panel Panel2;
-        
-        /// <summary>
-        /// Panel1 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Panel Panel1;
     }
 }

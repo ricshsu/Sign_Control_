@@ -77,7 +77,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Files\backlogin.jpg" />
+    <Content Include="Files\backlogin.jpeg" />
     <Content Include="js\images\ui-bg_glass_55_fbf9ee_1x400.png" />
     <Content Include="js\images\ui-bg_glass_65_ffffff_1x400.png" />
     <Content Include="js\images\ui-bg_glass_75_dadada_1x400.png" />
@@ -95,8 +95,7 @@
     <Content Include="js\me.js" />
     <Content Include="Main_Login.aspx" />
     <Content Include="Main_R.aspx" />
-    <Content Include="style\Sample.css" />
-    <Content Include="style\style_1.css" />
+    <Content Include="style\Sign_style.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -107,11 +106,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="ws\WS_Permission.asmx" />
-    <Content Include="Main_R_child1_.aspx" />
     <Content Include="Main_R_child1.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Files\class\DBProcess.cs" />
     <Compile Include="Files\class\DBProcess_.cs" />
     <Compile Include="Files\class\GFun.cs" />
     <Compile Include="Files\class\Init.cs">
@@ -133,17 +130,9 @@
     <Compile Include="Main_R.aspx.designer.cs">
       <DependentUpon>Main_R.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sheet.cs" />
     <Compile Include="ws\WS_Permission.asmx.cs">
       <DependentUpon>WS_Permission.asmx</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Main_R_child1_.aspx.cs">
-      <DependentUpon>Main_R_child1_.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Main_R_child1_.aspx.designer.cs">
-      <DependentUpon>Main_R_child1_.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main_R_child1.aspx.cs">
       <DependentUpon>Main_R_child1.aspx</DependentUpon>

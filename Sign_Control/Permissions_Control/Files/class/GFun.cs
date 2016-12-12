@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Collections;
 using System.Configuration;
 
-namespace EDA_IBF
+namespace EDA_Sign
 {
     public class GFun
     {

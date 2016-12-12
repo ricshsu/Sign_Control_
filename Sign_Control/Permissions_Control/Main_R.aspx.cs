@@ -10,16 +10,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Configuration;
 using System.Web.UI.WebControls;
+using System.Web;
 
 
-
-namespace EDA_IBF
+namespace EDA_Sign
 {
   
         public partial class Sample_ : Init
         {
             static string _msg = "";
             static DataTable maxid;
+
 
             protected void Page_Load(object sender, EventArgs e)
             {
@@ -39,6 +40,7 @@ namespace EDA_IBF
             protected void Upload_1(object sender, EventArgs e)
             {
                 // upload file asp.net 元件
+                string userID = HttpContext.Current.Session["checklogin"].ToString();
                 string csvPath = Server.MapPath("~/Files/") + Path.GetFileName(FileUpload_ASP.PostedFile.FileName);//讀檔
                 FileUpload_ASP.SaveAs(csvPath);//temp file
                 DataTable dt = new DataTable();
@@ -66,7 +68,7 @@ namespace EDA_IBF
 
                 for (int i = 0; i < dt.Rows.Count; i++) //匯入資料庫
                 {
-                    DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), "rice", ref _msg);
+                    DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
                 }
 
             }
