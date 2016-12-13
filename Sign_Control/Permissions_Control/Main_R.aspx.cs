@@ -16,7 +16,7 @@ using System.Web;
 namespace EDA_Sign
 {
   
-        public partial class Sample_ : Init
+        public partial class Main_ : Init
         {
             static string _msg = "";
             static DataTable maxid;
@@ -24,8 +24,15 @@ namespace EDA_Sign
 
             protected void Page_Load(object sender, EventArgs e)
             {
+
                 if (Session["checklogin"] == null)
-                     X.Redirect("/Main_Login.aspx", "Please login ...");
+                    X.Redirect("/Main_Login.aspx", "Please login ...");
+                else {
+                    string user = HttpContext.Current.Session["checklogin"].ToString();
+                    _msg = "";
+                    DBProcess_.Login_log(user, ref _msg);
+                }
+
  
             }
 
@@ -69,6 +76,12 @@ namespace EDA_Sign
                 for (int i = 0; i < dt.Rows.Count; i++) //匯入資料庫
                 {
                     DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
+                    if (_msg != "")
+                    {
+                        Console.WriteLine(_msg);
+                        X.MessageBox.Alert("提示", "Import data was error format problem ").Show();
+                        break;
+                    }
                 }
 
             }

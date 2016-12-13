@@ -10,7 +10,7 @@
 namespace EDA_Sign {
     
     
-    public partial class Sample_ {
+    public partial class Main_ {
         
         /// <summary>
         /// signup_ 控制項。

@@ -18,6 +18,10 @@
 .positive { color: green; }
 .negative { color: red; }
 
+#Text_Id {
+color:#FF00FF;
+}
+
 
 .R_Child1 
 {    background-color:#00B8CA;

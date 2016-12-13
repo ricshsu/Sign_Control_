@@ -1,9 +1,9 @@
 Customer_ID,Category,Part,Part_Id,Yield_Impact_Item,Key_Module,Data_Source,Critical_Item,EDA_Item
-N-I,CS,AMD144,AMD144A,X2,Litho,IPP,Line width,KPP-101,
+N-I,CS,AMD144 
 N-I,CS,AMD144,AMD144A,OPEN,Litho,IPP,Line width,KPP-101,
 N-I,CS,AMD144,AMD144A,X2,FVP,IPP,Cu Thickness,KPP-106,
 N-I,CS,AMD144,AMD144A,X2,Litho,IPP,Line width,KPP-145,
-N-I,CS,AMD144,AMD144A,OPEN,Litho,IPP,Line width,KPP-145,
+N-I,CS,AMD144,AMD144A 
 N-I,CS,AMD144,AMD144A,X2,FVP,IPP,Cu thickness,KPP-151,
 N-I,CS,AMD144,AMD144A,X2,Litho,IPP,Line width,KPP-234,
 N-I,CS,AMD144,AMD144A,OPEN,Litho,IPP,Line width,KPP-234,

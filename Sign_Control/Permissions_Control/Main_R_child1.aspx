@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R_child1.aspx.cs" Inherits="EDA_Sign.sample_3" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R_child1.aspx.cs" Inherits="EDA_Sign.Child1_" %>
 <%@ Register Assembly="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Namespace="System.Web.UI.WebControls" TagPrefix="asp" %>
 
 <%@ Import Namespace="System.Data" %>
@@ -13,17 +13,47 @@
 <link rel=stylesheet type="text/css" href="./style/Sign_style.css">
     <title></title>
 
+    <style>
+
+#Customer_ID {background-color: red;}
+</style>
+<script src="js/jquery-1.9.1.js" type="text/javascript"></script>
 <script>
+//    $(document).ready(init);
+
+//    function init() {
+//        console.log("HELLO.AAAA...");
+//        $("div#Text_Customer_ID").change(Change_Handle_A);
+//        $("#Text_Customer_ID").change(Change_Handle_A);
+//        $("div[id^='Text_Customer_ID']").change(Change_Handle_A);
+//        
+//        }
+
+//        debugger;
+//        if ($("#Text_Customer_ID").length > 0) {
+//          function Change_Handle_A()
+//        console.log("ext_Customer_ID-inputEl....");
+//        alert('不能輸入超過15個字元');
+//        }
+
+//    function Change_Handle_A() {
+//        console.log("ext_Customer_ID-inputEl....");
+//        alert('不能輸入超過15個字元');
+//    }
+//   console.log("ext_Customer_ID-inputEl....");
+//        alert('不能輸入超過15個字元');
     var template = '<span class="{0}">{1}</span>';
     var change = function (value) {
         return Ext.String.format(template, (value > 1) ? "positive" : "negative", value);
-    };
+     };
  
 </script>
 
 </head>
 <body class ="R_Child1">
+
     <form id="signup_" runat="server">
+ 
     <ext:ResourceManager ID="ResourceManager1" runat="server" />
         <ext:Store ID="Store1" runat="server" PageSize="19" AutoSync="true">
         <Model>
@@ -123,10 +153,18 @@
                                                     <DirectEvents>
                                                          <Select OnEvent="Cell_Click">
                                                              <ExtraParams>
-                                                                 <ext:Parameter Name="ID" Value="record.get('ID')" Mode="Raw" /> 
-                                                                 <ext:Parameter Name="Customer_ID" Value="record.get('Customer_ID')" Mode="Raw" /> 
-                                                                 <ext:Parameter Name="EDA_Item" Value="record.get('EDA_Item')" Mode="Raw" /> 
-                                                                 <ext:Parameter Name="Part_Id" Value="record.get('Part_Id')" Mode="Raw" /> 
+                                                                 <ext:Parameter Name="ID" Value="record.get('ID')" Mode="Raw" />  
+                                                                    <ext:Parameter Name="Customer_ID" Value="record.get('Customer_ID')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="Category" Value="record.get('Category')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="Part" Value="record.get('Part')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="Part_Id" Value="record.get('Part_Id')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="Yield_Impact_Item" Value="record.get('Yield_Impact_Item')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="Key_Module" Value="record.get('Key_Module')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="Data_Source" Value="record.get('Data_Source')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="Critical_Item" Value="record.get('Critical_Item')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="EDA_Item" Value="record.get('EDA_Item')" Mode="Raw" /> 
+                                                                    <ext:Parameter Name="MAIN_ID" Value="record.get('MAIN_ID')" Mode="Raw" />        
+
                                                              </ExtraParams>
                                                          </Select>
                                                      </DirectEvents>
@@ -145,16 +183,22 @@
                 <%--點div 並顯示在欄位上--%>
 
            
-                    <ext:FormPanel ID="UserForm2" Layout="Column" runat="server" Icon="User" Frame="true"
-                             Title="選取資料">
+                    <ext:FormPanel ID="UserForm2" Layout="Column" runat="server" Icon="User" Frame="true" Title="選取資料">
                         <FieldDefaults LabelAlign="Right" AllowBlank="false" />
                         <Items>
                             <ext:Panel ID="Panel9" runat="server" Border="false" ColumnWidth="1" Layout="ColumnLayout" BodyStyle="padding:5px">
                                 <Items>
                                     <ext:TextField ID="Text_Id" runat="server" FieldLabel="ID" Name="ID" ReadOnly="true"  />
-                                    <ext:TextField ID="Text_Customer_ID" runat="server" FieldLabel="Customer_ID" Name="Customer_ID" />
+                                    <ext:TextField ID="Text_Customer_ID" runat="server" FieldLabel="Customer_ID" Name="Customer_ID"  Length='15' EnforceMaxLength = "true"  MaxLength = "15"/>
+                                    <ext:TextField ID="Text_Category" runat="server" FieldLabel="Category" Name="Category" EnforceMaxLength = "true"  MaxLength = "8" />
+                                    <ext:TextField ID="Text_Part" runat="server" FieldLabel="Part" Name="Part" EnforceMaxLength = "true"  MaxLength = "7"/>
+                                    <ext:TextField ID="Text_Part_Id" runat="server" FieldLabel="Part_Id" Name="Part_Id" ReadOnly="true"  />
+                                    <ext:TextField ID="Text_Yield_Impact_Item" runat="server" FieldLabel="Yield_Impact_Item" Name="Yield_Impact_Item" EnforceMaxLength = "true"  MaxLength = "15"/>
+                                    <ext:TextField ID="Text_Key_Module" runat="server" FieldLabel="Key_Module" Name="Key_Module" EnforceMaxLength = "true"  MaxLength = "15" />
+                                    <ext:TextField ID="Text_Data_Source" runat="server" FieldLabel="Data_Source" Name="Data_Source" EnforceMaxLength = "true"  MaxLength = "10" />
+                                    <ext:TextField ID="Text_Critical_Item" runat="server" FieldLabel="Critical_Item" Name="Critical_Item" EnforceMaxLength = "true"  MaxLength = "50"/>
                                     <ext:TextField ID="Text_EDA_Item" runat="server" FieldLabel="EDA_Item" Name="EDA_Item" ReadOnly="true"  />
-                                    <ext:TextField ID="Text_Part_Id" runat="server" FieldLabel="Part_Id" Name="Part_Id" />
+                                    <ext:TextField ID="Text_MAIN_ID" runat="server" FieldLabel="MAIN_ID" Name="MAIN_ID" EnforceMaxLength = "true"  MaxLength = "2" />
 
                                 </Items>
                             </ext:Panel>

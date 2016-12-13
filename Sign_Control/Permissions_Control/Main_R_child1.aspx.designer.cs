@@ -10,7 +10,7 @@
 namespace EDA_Sign {
     
     
-    public partial class sample_3 {
+    public partial class Child1_ {
         
         /// <summary>
         /// signup_ 控制項。
@@ -319,13 +319,22 @@ namespace EDA_Sign {
         protected global::Ext.Net.TextField Text_Customer_ID;
         
         /// <summary>
-        /// Text_EDA_Item 控制項。
+        /// Text_Category 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::Ext.Net.TextField Text_EDA_Item;
+        protected global::Ext.Net.TextField Text_Category;
+        
+        /// <summary>
+        /// Text_Part 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_Part;
         
         /// <summary>
         /// Text_Part_Id 控制項。
@@ -335,6 +344,60 @@ namespace EDA_Sign {
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
         protected global::Ext.Net.TextField Text_Part_Id;
+        
+        /// <summary>
+        /// Text_Yield_Impact_Item 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_Yield_Impact_Item;
+        
+        /// <summary>
+        /// Text_Key_Module 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_Key_Module;
+        
+        /// <summary>
+        /// Text_Data_Source 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_Data_Source;
+        
+        /// <summary>
+        /// Text_Critical_Item 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_Critical_Item;
+        
+        /// <summary>
+        /// Text_EDA_Item 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_EDA_Item;
+        
+        /// <summary>
+        /// Text_MAIN_ID 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Text_MAIN_ID;
         
         /// <summary>
         /// btnOK 控制項。

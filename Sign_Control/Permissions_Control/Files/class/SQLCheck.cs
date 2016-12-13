@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace EDA_Sign
 {
-    public class GFun
+    public class SQLCheck
     {
         static string connStr = System.Configuration.ConfigurationSettings.AppSettings["PCBDB39"];
 
@@ -34,7 +34,7 @@ namespace EDA_Sign
             }
         }
 
-        public static void ExSql3(IEnumerable mylist, ref string ErrMsg)
+        public static void ExSql(IEnumerable mylist, ref string ErrMsg)
         {
             System.Collections.IEnumerator myEnumerator = mylist.GetEnumerator();
             SqlConnection myCn = new SqlConnection();

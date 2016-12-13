@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R.aspx.cs" Inherits="EDA_Sign.Sample_" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R.aspx.cs" Inherits="EDA_Sign.Main_" %>
 <%@ Register Assembly="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Namespace="System.Web.UI.WebControls" TagPrefix="asp" %>
 
 <%@ Import Namespace="System.Data" %>
@@ -40,7 +40,7 @@
      </div>
 
   <%--樣板 --%>
-          <ext:TabPanel ID="TabPanel1"  runat="server" Height="630"  Layout="FitLayout"
+          <ext:TabPanel ID="TabPanel1"  runat="server" Height="700"  Layout="FitLayout"
             DeferredRender="false">
             <Items>
 

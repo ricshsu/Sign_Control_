@@ -28,7 +28,7 @@ namespace EDA_Sign
             sql += " FROM eSPC.dbo.Sample_for_test_2016";
             sql += " WHERE 1 = 1";
              _msg = "";
-            dt = GFun.GetDTable(connStr, sql, ref _msg);
+             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
 
@@ -36,7 +36,7 @@ namespace EDA_Sign
         {
 
             sql = "select  ISNULL(MAX(ID), 0) AS MaxX from eSPC.dbo.Sample_for_test_2016;";
-            dt = GFun.GetDTable(connStr, sql, ref _msg);
+            dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
 
@@ -44,7 +44,7 @@ namespace EDA_Sign
         {
 
             sql = "select  ISNULL(MAX(ID), 0) AS MaxX from eSPC.dbo.Sample_for_test_2016;";
-            dt = GFun.GetDTable(connStr, sql, ref _msg);
+            dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
 
@@ -69,27 +69,34 @@ namespace EDA_Sign
             lisSQL.Add(sql);
             sql_temp = sql;
             _Msg = "";
-            GFun.ExSql3(lisSQL, ref _Msg);
+            SQLCheck.ExSql(lisSQL, ref _Msg);
 
             if (_Msg != "") return _Msg;
 
-            sql = " INSERT INTO EDA.dbo.Access_Permission_LOG_Info";
+            // STEP LOG
+            sql = " INSERT INTO eSPC.dbo.Record_Step_Log";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Access_Permission_GP_Info','M','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
-
+            sql += " VALUES('Sample_for_test_2016','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
-            GFun.ExSql3(lisSQL, ref _Msg);
+            SQLCheck.ExSql(lisSQL, ref _Msg);
 
             return _Msg;
         }
 
         //單筆資料更新
-        public static string Updata_Data(int ID, string Customer_ID, string man, ref string _Msg)
+        public static string Updata_Data(int ID, string Customer_ID, string Category, string Part, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string MAIN_ID, string man, ref string _Msg)
         {
             sql = " UPDATE eSPC.dbo.Sample_for_test_2016 ";
             sql += "SET Customer_ID='" + Customer_ID + "'";
+            sql += ",Category='" + Category + "'";
+            sql += ",Part='" + Part + "'";
+            sql += ",Yield_Impact_Item='" + Yield_Impact_Item + "'";
+            sql += ",Key_Module='" + Key_Module + "'";
+            sql += ",Data_Source='" + Data_Source + "'";
+            sql += ",Critical_Item='" + Critical_Item + "'";
+            sql += ",MAIN_ID='" + MAIN_ID + "'";
             sql += "WHERE ID='" + ID + "'";
             sql += " ;";
 
@@ -97,27 +104,26 @@ namespace EDA_Sign
             lisSQL.Add(sql);
             sql_temp = sql;
             _Msg = "";
-            GFun.ExSql3(lisSQL, ref _Msg);
+            SQLCheck.ExSql(lisSQL, ref _Msg);
 
             if (_Msg != "") return _Msg;
 
-            sql = " INSERT INTO EDA.dbo.Access_Permission_LOG_Info";
+            // STEP LOG
+            sql = " INSERT INTO eSPC.dbo.Record_Step_Log_";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Access_Permission_GP_Info','M','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
-
+            sql += " VALUES('Sample_for_test_2016','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
-            GFun.ExSql3(lisSQL, ref _Msg);
+            SQLCheck.ExSql(lisSQL, ref _Msg);
 
             return _Msg;
         }
 
-        //刪除資料
-        public static string Deldata_Data(int ID, string Customer_ID, string man, ref string _Msg)
+        //單筆資料刪除
+        public static string Del_Data(int ID, string man, ref string _Msg)
         {
-            sql = " UPDATE eSPC.dbo.Sample_for_test_2016 ";
-            sql += "SET Customer_ID='" + Customer_ID + "'";
+            sql = " DELETE FROM  eSPC.dbo.Sample_for_test_2016  ";
             sql += "WHERE ID='" + ID + "'";
             sql += " ;";
 
@@ -125,20 +131,35 @@ namespace EDA_Sign
             lisSQL.Add(sql);
             sql_temp = sql;
             _Msg = "";
-            GFun.ExSql3(lisSQL, ref _Msg);
+            SQLCheck.ExSql(lisSQL, ref _Msg);
 
             if (_Msg != "") return _Msg;
 
-            sql = " INSERT INTO EDA.dbo.Access_Permission_LOG_Info";
+            // STEP LOG
+            sql = " INSERT INTO eSPC.dbo.Record_Step_Log_";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Access_Permission_GP_Info','M','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
-
+            sql += " VALUES('Sample_for_test_2016','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
-            GFun.ExSql3(lisSQL, ref _Msg);
+            SQLCheck.ExSql(lisSQL, ref _Msg);
 
             return _Msg;
         }
+
+        // LOGIN_LOG
+        public static string Login_log( string man, ref string _Msg)
+        {
+            sql = " INSERT INTO eSPC.dbo.Record_Step_Log_";
+            sql += " (TableName, Action, Details, Revisor, Revise_Date)";
+            sql += " VALUES('Sample_for_test_2016','Login','" + "','" + man + "','" + Tools.Get_Now() + "')";
+            lisSQL.Clear();
+            lisSQL.Add(sql);
+            _Msg = "";
+            SQLCheck.ExSql(lisSQL, ref _Msg);
+
+            return _Msg;
+        }
+
 	}
 }

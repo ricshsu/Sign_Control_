@@ -110,7 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Files\class\DBProcess_.cs" />
-    <Compile Include="Files\class\GFun.cs" />
+    <Compile Include="Files\class\SQLCheck.cs" />
     <Compile Include="Files\class\Init.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
