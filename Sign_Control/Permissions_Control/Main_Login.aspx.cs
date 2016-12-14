@@ -18,6 +18,8 @@ namespace Permissions_Control
         protected void Button1_Click(object sender, DirectEventArgs e)
         {
             Session["checklogin"] = e.ExtraParams["user"];
+            e.ExtraParams["user"] = "rice";
+            e.ExtraParams["pass"] = "game";
 
             // Do some Authentication...
             if (e.ExtraParams["user"] != "rice" || e.ExtraParams["pass"] != "game")

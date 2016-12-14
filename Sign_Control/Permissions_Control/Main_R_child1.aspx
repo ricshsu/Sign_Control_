@@ -12,36 +12,9 @@
 <head runat="server">
 <link rel=stylesheet type="text/css" href="./style/Sign_style.css">
     <title></title>
-
-    <style>
-
-#Customer_ID {background-color: red;}
-</style>
 <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
 <script>
-//    $(document).ready(init);
-
-//    function init() {
-//        console.log("HELLO.AAAA...");
-//        $("div#Text_Customer_ID").change(Change_Handle_A);
-//        $("#Text_Customer_ID").change(Change_Handle_A);
-//        $("div[id^='Text_Customer_ID']").change(Change_Handle_A);
-//        
-//        }
-
-//        debugger;
-//        if ($("#Text_Customer_ID").length > 0) {
-//          function Change_Handle_A()
-//        console.log("ext_Customer_ID-inputEl....");
-//        alert('不能輸入超過15個字元');
-//        }
-
-//    function Change_Handle_A() {
-//        console.log("ext_Customer_ID-inputEl....");
-//        alert('不能輸入超過15個字元');
-//    }
-//   console.log("ext_Customer_ID-inputEl....");
-//        alert('不能輸入超過15個字元');
+ 
     var template = '<span class="{0}">{1}</span>';
     var change = function (value) {
         return Ext.String.format(template, (value > 1) ? "positive" : "negative", value);
@@ -55,9 +28,38 @@
     <form id="signup_" runat="server">
  
     <ext:ResourceManager ID="ResourceManager1" runat="server" />
-        <ext:Store ID="Store1" runat="server" PageSize="19" AutoSync="true">
+                            <!--查詢資料 -->
+                        <ext:Panel ID="FormPanel1" Layout="Column" runat="server"   Frame="true" Title="查詢資料">
+                             <Items>
+                                <ext:Panel ID="Panel2" runat="server" Border="false" ColumnWidth="1" Layout=ColumnLayout BodyStyle="padding:1px">
+                                    <Items>
+                                        <ext:TextField ID="Find_Category" runat="server" FieldLabel="Category" Name="Find_Category"   EnforceMaxLength = "true"  MaxLength = "8" />
+  
+                                        <ext:TextField ID="Find_Part_Id" runat="server" FieldLabel="Part_Id" Name="Find_Part_Id"    />
+                          
+                                        <ext:TextField ID="Find_EDA_Item" runat="server" FieldLabel="EDA_Item" Name="Find_EDA_Item"   />
+                                   </Items>
+                                </ext:Panel>
+                            </Items>
+                            <Buttons>
+                             <ext:Button runat="server" ID="btnLookup" Text="查詢" Icon="Accept">
+                                    <DirectEvents>
+                                        <Click OnEvent="btnLookup_DirectClick">
+                                        <EventMask ShowMask="true" Msg="處理中..."></EventMask>
+                                         <ExtraParams>
+                                                <ext:Parameter Name="Text_Customer_ID" runat="server" Value="Customer_ID"></ext:Parameter>
+                                         </ExtraParams>
+                                         </Click>
+                                    </DirectEvents>
+                             </ext:Button> 
+                             </Buttons>                  
+                        </ext:Panel>
+                      
+
+  <!--資料庫資料-->
+        <ext:Store ID="Store1" runat="server" PageSize="19" AutoSync="true" >
         <Model>
-            <ext:Model ID="Model1" runat="server" Name="Model_Custom">
+            <ext:Model ID="Model1" runat="server" Name="Model_Custom" >
                 <Fields>
                     <ext:ModelField Name="ID" Type="String" />
                     <ext:ModelField Name="Customer_ID" Type="String" />
@@ -77,7 +79,7 @@
                     <%-- DATA LIST--%>
                 
                         <Items>
-                            <ext:Panel ID="Panel1" runat="server" Title="Grid Panel">
+                            <ext:Panel ID="Panel1" runat="server" Title="Sign data">
                                 <Items>
                                     <ext:GridPanel ID="GridPanel1" runat="server" StoreID="Store1">
                                         <ColumnModel ID="ColumnModel1" runat="server">
@@ -180,6 +182,11 @@
                                 </Items>
                             </ext:Panel>
                         </Items>
+
+
+                
+
+
                 <%--點div 並顯示在欄位上--%>
 
            
@@ -199,17 +206,11 @@
                                     <ext:TextField ID="Text_Critical_Item" runat="server" FieldLabel="Critical_Item" Name="Critical_Item" EnforceMaxLength = "true"  MaxLength = "50"/>
                                     <ext:TextField ID="Text_EDA_Item" runat="server" FieldLabel="EDA_Item" Name="EDA_Item" ReadOnly="true"  />
                                     <ext:TextField ID="Text_MAIN_ID" runat="server" FieldLabel="MAIN_ID" Name="MAIN_ID" EnforceMaxLength = "true"  MaxLength = "2" />
-
                                 </Items>
-                            </ext:Panel>
-                        </Items>
 
-  
-                     </ext:FormPanel>
-               
-                        <%-- update date --%>
-                                <div class="divcss-right">
-                                 <ext:Button runat="server" ID="btnOK" Text="修改" Icon="Accept">
+                          <%-- update date --%>
+                                 <Buttons>
+                                <ext:Button runat="server" ID="btnOK" Text="修改" Icon="Accept">
                                     <DirectEvents>
                                         <Click OnEvent="btnUpdae_DirectClick">
                                         <EventMask ShowMask="true" Msg="處理中..."></EventMask>
@@ -218,23 +219,27 @@
                                          </ExtraParams>
                                          </Click>
                                     </DirectEvents>
-                                </ext:Button>                   
-                                </div>
-                                        </div> 
-                                <div class="divcss-right">
-                                <ext:Button runat="server" ID="Button1" Text="刪除" Icon="Cross">
+                                </ext:Button>  
+                                </Buttons> 
+                                
+                                <Buttons>
+                               <ext:Button runat="server" ID="Button1" Text="刪除" Icon="Cross">
                                     <DirectEvents>
                                         <Click OnEvent="btnDel_DirectClick">
                                         <EventMask ShowMask="true" Msg="處理中..."></EventMask>
-                                         <ExtraParams>
+<%--                                         <ExtraParams>
                                                 <ext:Parameter Name="Text_Customer_ID" runat="server" Value="Customer_ID"></ext:Parameter>
-                                         </ExtraParams>
+                                         </ExtraParams>--%>
                                          </Click>
                                     </DirectEvents>
-                                </ext:Button>  
- 
+                                </ext:Button>
+                                </Buttons>
 
-            
+
+                            </ext:Panel>
+                        </Items>
+                      </ext:FormPanel>
+      
   
     </form>
 </body>

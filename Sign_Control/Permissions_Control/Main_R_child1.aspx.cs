@@ -52,6 +52,15 @@ namespace EDA_Sign
             this.Store1.DataSource = dtTemp;
             this.Store1.DataBind();
         }
+
+        // After serarch data  , keep the data
+        protected void LookupReFlash(string Category, string Part_Id,string  EDA_Item) {
+            _msg = null;
+            dtTemp = DBProcess_.LookupSign(Category, Part_Id, EDA_Item, ref _msg);
+            this.Store1.DataSource = dtTemp;
+            this.Store1.DataBind();
+        }
+
         //更新資料
         protected void btnUpdae_DirectClick(object sender, Ext.Net.DirectEventArgs e)
         {
@@ -81,15 +90,51 @@ namespace EDA_Sign
 
             string userID = HttpContext.Current.Session["checklogin"].ToString();
             System.Threading.Thread.Sleep(300);
+
             string Text_Customer_ID = this.Text_Customer_ID.Text;
-            int Text_Id = Int32.Parse(this.Text_Id.Text);
+            int Text_Id = Int32.Parse(this.Text_Id.Text); 
+
+            string Category_ = Find_Category.Text;
+            string Part_Id_ = Find_Part_Id.Text;
+            string EDA_Item_ = Find_EDA_Item.Text;
+
             _msg = "";
-            DBProcess_.Del_Data(Text_Id, userID, ref _msg);
 
-            X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  DATA successful delete").Show(); 
-            
 
-            ReFlash();
+            if (Session["isLookup"].ToString() == "YES")
+            {
+                DBProcess_.Del_Data(Text_Id, userID, ref _msg);
+                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  DATA successful delete").Show();
+                LookupReFlash(Category_, Part_Id_, EDA_Item_);
+            }
+            else
+            {
+                DBProcess_.Del_Data(Text_Id, userID, ref _msg);
+                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  DATA successful delete").Show();
+                ReFlash();
+            }
+
+        }
+
+
+
+        //查詢資料
+        protected void btnLookup_DirectClick(object sender, Ext.Net.DirectEventArgs e)
+        {
+
+            string userID = HttpContext.Current.Session["checklogin"].ToString();
+            Session["isLookup"] = "YES";
+            string Category = Find_Category.Text;
+            string Part_Id = Find_Part_Id.Text;
+            string EDA_Item = Find_EDA_Item.Text;
+            _msg = "";
+
+            LookupReFlash(Category, Part_Id, EDA_Item);
+ 
+
+            String counts = DBProcess_.Signcount(Category, Part_Id, EDA_Item, ref _msg);
+            X.MessageBox.Alert("提示", " After search , all have   " + counts + " counts ").Show();
+
         }
 
      }  

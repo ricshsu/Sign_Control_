@@ -31,6 +31,60 @@ namespace EDA_Sign {
         protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
+        /// FormPanel1 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.Panel FormPanel1;
+        
+        /// <summary>
+        /// Panel2 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.Panel Panel2;
+        
+        /// <summary>
+        /// Find_Category 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Find_Category;
+        
+        /// <summary>
+        /// Find_Part_Id 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Find_Part_Id;
+        
+        /// <summary>
+        /// Find_EDA_Item 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.TextField Find_EDA_Item;
+        
+        /// <summary>
+        /// btnLookup 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::Ext.Net.Button btnLookup;
+        
+        /// <summary>
         /// Store1 控制項。
         /// </summary>
         /// <remarks>

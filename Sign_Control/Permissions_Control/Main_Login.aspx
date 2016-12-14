@@ -136,8 +136,8 @@
                             ShowWarningOnFailure="false">
                             <EventMask ShowMask="true" Msg="驗證中..." MinDelay="1000" />
                             <ExtraParams>
-                                <ext:Parameter Name="user" Value="App.txtUsername.value" Mode="Raw" />
-                                <ext:Parameter Name="pass" Value="App.txtPassword.value" Mode="Raw" />
+                                <ext:Parameter Name="user" Value="App.txtUsername.value" Mode="Raw"   />
+                                <ext:Parameter Name="pass" Value="App.txtPassword.value" Mode="Raw"  />
                             </ExtraParams>
                         </Click>
                     </DirectEvents>

@@ -18,6 +18,14 @@ namespace EDA_Sign
             return myDateString;
         }
 
+
+        public static string CleanComma(string Category)
+        {
+            if (Category == ",")
+                Category = null;
+            return Category;
+        }
+
     }
 
 

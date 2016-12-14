@@ -147,6 +147,41 @@ namespace EDA_Sign
             return _Msg;
         }
 
+
+        //條件資料查詢
+        public static DataTable  LookupSign(string Category, string Part_Id, string EDA_Item, ref string _Msg)
+        {
+            sql = " SELECT * FROM ESPC.DBO.SAMPLE_FOR_TEST_2016 ";
+            sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
+            sql += " ;";
+
+            lisSQL.Clear();
+            lisSQL.Add(sql);
+            sql_temp = sql;
+            _Msg = "";
+
+            dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
+            return dt;
+        }
+       
+        public static string Signcount(string Category, string Part_Id, string EDA_Item, ref string _Msg)
+        {
+
+            sql = " SELECT count(*) counts FROM ESPC.DBO.SAMPLE_FOR_TEST_2016 ";
+            sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
+            sql += " ;";
+
+            lisSQL.Clear();
+            lisSQL.Add(sql);
+            sql_temp = sql;
+            _Msg = "";
+
+            dt = SQLCheck.GetDTable(connStr, sql, ref _msg); 
+            
+            return   dt.Rows[0][0].ToString() ;
+ 
+        }
+
         // LOGIN_LOG
         public static string Login_log( string man, ref string _Msg)
         {

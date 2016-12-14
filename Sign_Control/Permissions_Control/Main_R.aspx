@@ -40,7 +40,7 @@
      </div>
 
   <%--樣板 --%>
-          <ext:TabPanel ID="TabPanel1"  runat="server" Height="700"  Layout="FitLayout"
+          <ext:TabPanel ID="TabPanel1"  runat="server" Height="800"  Layout="FitLayout"
             DeferredRender="false">
             <Items>
 
