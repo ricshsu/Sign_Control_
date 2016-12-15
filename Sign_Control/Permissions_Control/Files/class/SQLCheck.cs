@@ -7,11 +7,12 @@ using System.Data.SqlClient;
 using System.Collections;
 using System.Configuration;
 
+
 namespace EDA_Sign
 {
     public class SQLCheck
     {
-        static string connStr = System.Configuration.ConfigurationSettings.AppSettings["PCBDB39"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
 
         public static DataTable GetDTable(string ConnStr, string Sql, ref string ErrMsg)
         {

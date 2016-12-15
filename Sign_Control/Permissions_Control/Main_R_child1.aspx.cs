@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using Ext.Net;
 using System.Diagnostics;
 using System.Collections.Generic;
-using Permissions_Control;
 using System.IO;
 using System.Configuration;
 using System.Web.UI.WebControls;
@@ -16,12 +15,12 @@ namespace EDA_Sign
 {
     public partial class Child1_ : Init
     {
-        static string connStr = System.Configuration.ConfigurationSettings.AppSettings["PCBDB39"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
         static string strTableName = "";
         static string strAction = "";
         static string strDetails = "";
         static string _msg = "";
-        static Boolean isFirst;
+  //      static Boolean isFirst;
         static DataTable dtTemp;
 
 
@@ -37,12 +36,12 @@ namespace EDA_Sign
             }
         }
 
-        protected void Cell_Click(object sender, DirectEventArgs e)
-        {
-            strTableName = e.ExtraParams["strTableName"];
-            strAction = e.ExtraParams["strAction"];
-            strDetails = e.ExtraParams["Details"];
-        }
+       protected void Cell_Click(object sender, DirectEventArgs e)
+       {
+           strTableName = e.ExtraParams["strTableName"];
+           strAction = e.ExtraParams["strAction"];
+           strDetails = e.ExtraParams["Details"];
+       }
 
  
 
@@ -80,7 +79,7 @@ namespace EDA_Sign
             System.Threading.Thread.Sleep(300);
 
             DBProcess_.Updata_Data(Text_Id, Text_Customer_ID, Text_Category, Text_Part, Text_Yield_Impact_Item, Text_Key_Module, Text_Data_Source, Text_Critical_Item, Text_MAIN_ID, userID, ref _msg);
-            X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  DATA successful updated").Show(); 
+            X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful updated").Show(); 
             ReFlash();
         }
 
@@ -104,13 +103,13 @@ namespace EDA_Sign
             if (Session["isLookup"].ToString() == "YES")
             {
                 DBProcess_.Del_Data(Text_Id, userID, ref _msg);
-                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  DATA successful delete").Show();
+                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
                 LookupReFlash(Category_, Part_Id_, EDA_Item_);
             }
             else
             {
                 DBProcess_.Del_Data(Text_Id, userID, ref _msg);
-                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  DATA successful delete").Show();
+                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
                 ReFlash();
             }
 

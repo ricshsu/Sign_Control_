@@ -17,9 +17,10 @@
  
     var template = '<span class="{0}">{1}</span>';
     var change = function (value) {
-        return Ext.String.format(template, (value > 1) ? "positive" : "negative", value);
-     };
- 
+       // return Ext.String.format(template, (value > 1) ? "positive" : "negative", value);
+
+    }
+   
 </script>
 
 </head>
@@ -35,9 +36,9 @@
                                     <Items>
                                         <ext:TextField ID="Find_Category" runat="server" FieldLabel="Category" Name="Find_Category"   EnforceMaxLength = "true"  MaxLength = "8" />
   
-                                        <ext:TextField ID="Find_Part_Id" runat="server" FieldLabel="Part_Id" Name="Find_Part_Id"    />
+                                        <ext:TextField ID="Find_Part_Id" runat="server" FieldLabel="Part_Id" Name="Find_Part_Id"   EnforceMaxLength = "true"  MaxLength = "7" />
                           
-                                        <ext:TextField ID="Find_EDA_Item" runat="server" FieldLabel="EDA_Item" Name="Find_EDA_Item"   />
+                                        <ext:TextField ID="Find_EDA_Item" runat="server" FieldLabel="EDA_Item" Name="Find_EDA_Item" EnforceMaxLength = "true"  MaxLength = "30"  />
                                    </Items>
                                 </ext:Panel>
                             </Items>
@@ -139,7 +140,7 @@
                                                 <Editor>
                                                     <ext:TextField ID="TextField11" runat="server" />
                                                 </Editor>
-                                                <Renderer Fn="change"/>
+                                              <%---- javascript   <Renderer Fn="change"/>--%> 
                                             </ext:Column>       
                                             </Columns>
  

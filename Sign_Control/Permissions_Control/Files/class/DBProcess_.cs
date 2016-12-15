@@ -13,7 +13,7 @@ namespace EDA_Sign
 {
 	public class DBProcess_
 	{
-        static string connStr = System.Configuration.ConfigurationSettings.AppSettings["PCBDB39"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
         static String sql;
         static String sql_temp;
         static DataTable dt = new DataTable();
@@ -25,7 +25,7 @@ namespace EDA_Sign
         public static DataTable Query_Data()
         {
             sql = " SELECT ID,Customer_ID,Category,Part,Part_Id,Yield_Impact_Item,Key_Module,Data_Source,Critical_Item,EDA_Item,MAIN_ID";
-            sql += " FROM eSPC.dbo.Sample_for_test_2016";
+            sql += " FROM EDA.dbo.Daily_Kanben_OOC_Monitor";
             sql += " WHERE 1 = 1";
              _msg = "";
              dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
@@ -35,7 +35,7 @@ namespace EDA_Sign
         public static DataTable maxID()
         {
 
-            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from eSPC.dbo.Sample_for_test_2016;";
+            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_Kanben_OOC_Monitor;";
             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
@@ -43,7 +43,7 @@ namespace EDA_Sign
         public static DataTable QueryUser()
         {
 
-            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from eSPC.dbo.Sample_for_test_2016;";
+            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_Kanben_OOC_Monitor;";
             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
@@ -51,7 +51,7 @@ namespace EDA_Sign
         //上傳資料
         public static string Upload_Data(int ID ,  string Customer_ID, string Category, string Part, string Part_Id, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string EDA_Item, string MAIN_ID, string man, ref string _Msg)
         {
-            sql = " INSERT eSPC.dbo.Sample_for_test_2016 VALUES (";
+            sql = " INSERT EDA.dbo.Daily_Kanben_OOC_Monitor VALUES (";
             sql += "  '" + ID + "'";
             sql += " , '" + Customer_ID + "'";
             sql += " , '" + Category + "'";
@@ -74,9 +74,9 @@ namespace EDA_Sign
             if (_Msg != "") return _Msg;
 
             // STEP LOG
-            sql = " INSERT INTO eSPC.dbo.Record_Step_Log";
+            sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Sample_for_test_2016','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Kanben_OOC_Monitor','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -88,7 +88,7 @@ namespace EDA_Sign
         //單筆資料更新
         public static string Updata_Data(int ID, string Customer_ID, string Category, string Part, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string MAIN_ID, string man, ref string _Msg)
         {
-            sql = " UPDATE eSPC.dbo.Sample_for_test_2016 ";
+            sql = " UPDATE EDA.dbo.Daily_Kanben_OOC_Monitor ";
             sql += "SET Customer_ID='" + Customer_ID + "'";
             sql += ",Category='" + Category + "'";
             sql += ",Part='" + Part + "'";
@@ -108,10 +108,10 @@ namespace EDA_Sign
 
             if (_Msg != "") return _Msg;
 
-            // STEP LOG
-            sql = " INSERT INTO eSPC.dbo.Record_Step_Log_";
+            //STEP LOG
+            sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Sample_for_test_2016','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Kanben_OOC_Monitor','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -123,7 +123,7 @@ namespace EDA_Sign
         //單筆資料刪除
         public static string Del_Data(int ID, string man, ref string _Msg)
         {
-            sql = " DELETE FROM  eSPC.dbo.Sample_for_test_2016  ";
+            sql = " DELETE FROM  EDA.dbo.Daily_Kanben_OOC_Monitor ";
             sql += "WHERE ID='" + ID + "'";
             sql += " ;";
 
@@ -136,9 +136,9 @@ namespace EDA_Sign
             if (_Msg != "") return _Msg;
 
             // STEP LOG
-            sql = " INSERT INTO eSPC.dbo.Record_Step_Log_";
+            sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Sample_for_test_2016','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Kanben_OOC_Monitor','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -151,7 +151,7 @@ namespace EDA_Sign
         //條件資料查詢
         public static DataTable  LookupSign(string Category, string Part_Id, string EDA_Item, ref string _Msg)
         {
-            sql = " SELECT * FROM ESPC.DBO.SAMPLE_FOR_TEST_2016 ";
+            sql = " SELECT * FROM EDA.dbo.Daily_Kanben_OOC_Monitor ";
             sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
             sql += " ;";
 
@@ -167,7 +167,7 @@ namespace EDA_Sign
         public static string Signcount(string Category, string Part_Id, string EDA_Item, ref string _Msg)
         {
 
-            sql = " SELECT count(*) counts FROM ESPC.DBO.SAMPLE_FOR_TEST_2016 ";
+            sql = " SELECT count(*) counts FROM EDA.dbo.Daily_Kanben_OOC_Monitor ";
             sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
             sql += " ;";
 
@@ -185,12 +185,12 @@ namespace EDA_Sign
         // LOGIN_LOG
         public static string Login_log( string man, ref string _Msg)
         {
-            sql = " INSERT INTO eSPC.dbo.Record_Step_Log_";
-            sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Sample_for_test_2016','Login','" + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql = " insert into EDA.DBO.RECORD_STEP_LOG";
+            sql += " (tablename, action, details, revisor, revise_date)";
+            sql += " values('Daily_Kanben_OOC_Monitor','login','" + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
-            _Msg = "";
+            _msg = "";
             SQLCheck.ExSql(lisSQL, ref _Msg);
 
             return _Msg;
