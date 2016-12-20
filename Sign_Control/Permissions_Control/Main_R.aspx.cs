@@ -76,7 +76,7 @@ namespace EDA_Sign
                 maxid = DBProcess_.maxID();
                 int countID = int.Parse(maxid.Rows[0][0].ToString()) + 1;
 
-                for (int i = 0; i < dt.Rows.Count; i++) //匯入資料庫
+                for (int i = 1; i < dt.Rows.Count; i++) //匯入資料庫，剃除表頭
                 {
                     DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
                     if (_msg != "")
@@ -85,12 +85,17 @@ namespace EDA_Sign
                         break;
                     }
                 }
-                X.MessageBox.Alert("提示", "共 " + dt.Rows.Count + "筆，更新完畢").Show();
-                System.Threading.Thread.Sleep(300);
-               
+
+ 
+                  X.MessageBox.Alert("提示", "共 " + dt.Rows.Count + "筆，更新完畢。").Show();
+                  System.Threading.Thread.Sleep(300);
+                  Panel2.Reload();
+        
                
   
             }
+
+ 
 
         }
    

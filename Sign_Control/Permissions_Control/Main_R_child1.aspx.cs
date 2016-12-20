@@ -20,7 +20,6 @@ namespace EDA_Sign
         static string strAction = "";
         static string strDetails = "";
         static string _msg = "";
-  //      static Boolean isFirst;
         static DataTable dtTemp;
 
 
@@ -97,11 +96,8 @@ namespace EDA_Sign
             string Part_Id_ = Find_Part_Id.Text;
             string EDA_Item_ = Find_EDA_Item.Text;
 
-
-
             _msg = "";
             
-
             if (Session["isLookup"] == null)
             {
                 DBProcess_.Del_Data(Text_Id, userID, ref _msg);
@@ -118,8 +114,7 @@ namespace EDA_Sign
             else {
                 DBProcess_.Del_Data(Text_Id, userID, ref _msg);
                 X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
-                ReFlash();
-            
+                ReFlash();     
             }
  
 

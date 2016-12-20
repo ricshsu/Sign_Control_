@@ -14,7 +14,7 @@ namespace Permissions_Control
         protected void Page_Load(object sender, EventArgs e)
         {
             //writer down license inju
-            string LicenseKey = "net,5,2038-11-11";
+            string LicenseKey = "net,5,9999-11-11";
             byte[] b = Encoding.Default.GetBytes(LicenseKey);
             LicenseKey = Convert.ToBase64String(b);
             Session["Ext.Net.LicenseKey"] = LicenseKey;
