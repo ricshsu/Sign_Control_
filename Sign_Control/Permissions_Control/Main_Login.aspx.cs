@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Ext.Net;
+using System.Text;
 
 namespace Permissions_Control
 {
@@ -12,6 +13,12 @@ namespace Permissions_Control
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //writer down license inju
+            string LicenseKey = "net,5,2038-11-11";
+            byte[] b = Encoding.Default.GetBytes(LicenseKey);
+            LicenseKey = Convert.ToBase64String(b);
+            Session["Ext.Net.LicenseKey"] = LicenseKey;
+
 
         }
 

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\n000161273\Desktop\Sign_control" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="設定檔1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="js/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="js/me.js" publishTime="12/10/2015 15:42:32" />
+    <file relUrl="js/images/ui-icons_2e83ff_256x240.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="js/jquery-ui.css" publishTime="12/04/2015 15:53:20" />
+    <file relUrl="js/images/ui-icons_888888_256x240.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="js/jquery-ui.js" publishTime="12/04/2015 15:52:17" />
+    <file relUrl="js/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="js/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="bin/Permissions_Control.pdb" publishTime="12/20/2016 11:31:14" />
+    <file relUrl="Files/Loading.gif" publishTime="12/19/2016 13:53:28" />
+    <file relUrl="js/jquery-1.9.1.js" publishTime="12/04/2015 15:52:10" />
+    <file relUrl="style/Sign_style.css" publishTime="12/13/2016 09:05:39" />
+    <file relUrl="bin/Ext.Net.dll" publishTime="05/10/2016 19:48:28" />
+    <file relUrl="js/images/ui-bg_glass_75_dadada_1x400.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="bin/Permissions_Control.dll" publishTime="12/20/2016 11:31:14" />
+    <file relUrl="bin/Transformer.NET.dll" publishTime="02/20/2016 21:45:16" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="02/20/2016 21:45:16" />
+    <file relUrl="ws/WS_Permission.asmx" publishTime="12/08/2015 10:32:46" />
+    <file relUrl="Main_Login.aspx" publishTime="12/14/2016 13:36:26" />
+    <file relUrl="packages.config" publishTime="09/19/2016 13:49:27" />
+    <file relUrl="bin/Ext.Net.Utilities.dll" publishTime="02/20/2016 21:45:16" />
+    <file relUrl="Main_R.aspx" publishTime="12/20/2016 09:46:17" />
+    <file relUrl="Files/backlogin.jpeg" publishTime="12/09/2016 13:50:55" />
+    <file relUrl="js/images/ui-icons_222222_256x240.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="js/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="js/images/ui-icons_cd0a0a_256x240.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="Main_R_child1.aspx" publishTime="12/19/2016 09:21:42" />
+    <file relUrl="js/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="12/08/2015 18:10:12" />
+    <file relUrl="js/images/ui-icons_454545_256x240.png" publishTime="12/08/2015 07:23:26" />
+    <file relUrl="Web.config" publishTime="12/19/2016 09:21:53" />
+  </publishProfile>
+</publishData>

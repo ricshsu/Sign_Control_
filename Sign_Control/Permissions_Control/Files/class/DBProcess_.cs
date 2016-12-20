@@ -52,8 +52,8 @@ namespace EDA_Sign
         public static string Upload_Data(int ID ,  string Customer_ID, string Category, string Part, string Part_Id, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string EDA_Item, string MAIN_ID, string man, ref string _Msg)
         {
             sql = " INSERT EDA.dbo.Daily_Kanben_OOC_Monitor VALUES (";
-            sql += "  '" + ID + "'";
-            sql += " , '" + Customer_ID + "'";
+           // sql += "  '" + ID + "'";
+            sql += "  '" + Customer_ID + "'";
             sql += " , '" + Category + "'";
             sql += " , '" + Part + "'";
             sql += " , '" + Part_Id + "'";

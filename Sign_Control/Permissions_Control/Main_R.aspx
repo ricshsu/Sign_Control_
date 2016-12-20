@@ -11,8 +11,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <link rel=stylesheet type="text/css" href="./style/Sign_style.css">
+ 
 </head>
-
 
 <body class= "main_body">
 
@@ -33,24 +33,39 @@
              </ext:Button>
      </div>
 
-     <div class="divcss=left" >
+     <div class="divcss-left" >
          <asp:FileUpload ID="FileUpload_ASP"  runat="server">
         </asp:FileUpload>
-        <asp:Button   class="button" ID="Button12" runat="server" Text="CSV 上傳"  OnClick = "Upload_1" />
+    </div>
+    <div>
+         <ext:Button ID="Button1" runat="server" Text="CSV 上傳">
+            <DirectEvents>
+                <Click OnEvent="Upload_1">
+                    <ExtraParams>
+                         <ext:Parameter Name="Item" Value="My param" />
+                    </ExtraParams>
+                    <EventMask ShowMask="true" Msg= 'Upload... ' />
+                </Click>
+            </DirectEvents>
+        </ext:Button>
+ 
      </div>
 
   <%--樣板 --%>
+ 
           <ext:TabPanel ID="TabPanel1"  runat="server" Height="800"  Layout="FitLayout"
-            DeferredRender="false">
+            DeferredRender="false" >
             <Items>
 
-                <ext:Panel ID="Panel2" runat="server" Title="Sign detail">
-                    <Loader ID="Loader2"  runat="server" Url="Main_R_child1.aspx" Mode="Frame" >
+                <ext:Panel ID="Panel2" runat="server" Title="Sign detail"  >
+                    <Loader ID="Loader2"  runat="server" Url="Main_R_child1.aspx" Mode="Frame" AutoLoad ="true" >
                         <LoadMask ShowMask="true" />
                     </Loader>
                 </ext:Panel>
             </Items>
          </ext:TabPanel>
+ 
+  
  <%--樣板 --%>  
     </form>
 </body>

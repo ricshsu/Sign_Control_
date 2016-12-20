@@ -11,7 +11,7 @@ using System.IO;
 using System.Configuration;
 using System.Web.UI.WebControls;
 using System.Web;
-
+using Permissions_Control;
 
 namespace EDA_Sign
 {
@@ -46,6 +46,7 @@ namespace EDA_Sign
 
             protected void Upload_1(object sender, EventArgs e)
             {
+
                 // upload file asp.net 元件
                 string userID = HttpContext.Current.Session["checklogin"].ToString();
                 string csvPath = Server.MapPath("~/Files/") + Path.GetFileName(FileUpload_ASP.PostedFile.FileName);//讀檔
@@ -54,6 +55,8 @@ namespace EDA_Sign
                 _msg = "";
                 dt.Columns.AddRange(new DataColumn[10] { new DataColumn("Customer_ID", typeof(string)), new DataColumn("Category", typeof(string)), new DataColumn("Part", typeof(string)), new DataColumn("Part_Id", typeof(string)), new DataColumn("Yield_Impact_Item", typeof(string)), new DataColumn("Key_Module", typeof(string)), new DataColumn("Data_Source", typeof(string)), new DataColumn("Critical_Item", typeof(string)), new DataColumn("EDA_Item", typeof(string)), new DataColumn("MAIN_ID", typeof(string)) });
                 string csvData = File.ReadAllText(csvPath);
+
+               
                 foreach (string row in csvData.Split('\n')) //讀csv檔
                 {
                     if (!string.IsNullOrEmpty(row))
@@ -78,12 +81,15 @@ namespace EDA_Sign
                     DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
                     if (_msg != "")
                     {
-                        Console.WriteLine(_msg);
                         X.MessageBox.Alert("提示", "Import data was error format problem ").Show();
                         break;
                     }
                 }
-
+                X.MessageBox.Alert("提示", "共 " + dt.Rows.Count + "筆，更新完畢").Show();
+                System.Threading.Thread.Sleep(300);
+               
+               
+  
             }
 
         }

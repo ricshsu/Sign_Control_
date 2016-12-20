@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\backlogin.jpeg" />
+    <Content Include="Files\Loading.gif" />
     <Content Include="js\images\ui-bg_glass_55_fbf9ee_1x400.png" />
     <Content Include="js\images\ui-bg_glass_65_ffffff_1x400.png" />
     <Content Include="js\images\ui-bg_glass_75_dadada_1x400.png" />

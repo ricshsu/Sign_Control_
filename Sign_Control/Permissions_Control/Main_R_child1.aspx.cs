@@ -86,7 +86,7 @@ namespace EDA_Sign
         //刪除資料
         protected void btnDel_DirectClick(object sender, Ext.Net.DirectEventArgs e)
         {
-
+   
             string userID = HttpContext.Current.Session["checklogin"].ToString();
             System.Threading.Thread.Sleep(300);
 
@@ -97,21 +97,31 @@ namespace EDA_Sign
             string Part_Id_ = Find_Part_Id.Text;
             string EDA_Item_ = Find_EDA_Item.Text;
 
+
+
             _msg = "";
+            
 
-
-            if (Session["isLookup"].ToString() == "YES")
+            if (Session["isLookup"] == null)
+            {
+                DBProcess_.Del_Data(Text_Id, userID, ref _msg);
+                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
+                Session["isLookup"] = "NO";
+                ReFlash();
+            }
+            else if (Session["isLookup"].ToString() == "YES")
             {
                 DBProcess_.Del_Data(Text_Id, userID, ref _msg);
                 X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
                 LookupReFlash(Category_, Part_Id_, EDA_Item_);
             }
-            else
-            {
+            else {
                 DBProcess_.Del_Data(Text_Id, userID, ref _msg);
                 X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
                 ReFlash();
+            
             }
+ 
 
         }
 
