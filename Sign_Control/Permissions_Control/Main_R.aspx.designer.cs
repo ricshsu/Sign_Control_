@@ -31,15 +31,6 @@ namespace EDA_Sign {
         protected global::Ext.Net.ResourceManager ResourceManager_2;
         
         /// <summary>
-        /// Button_r 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Button Button_r;
-        
-        /// <summary>
         /// FileUpload_ASP 控制項。
         /// </summary>
         /// <remarks>

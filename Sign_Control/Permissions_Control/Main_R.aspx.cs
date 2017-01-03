@@ -6,12 +6,11 @@ using System.Data.SqlClient;
 using Ext.Net;
 using System.Diagnostics;
 using System.Collections.Generic;
-//using Permissions_Control;
 using System.IO;
 using System.Configuration;
 using System.Web.UI.WebControls;
-using System.Web;
-using Permissions_Control;
+using System.Web; 
+using System.Text;
 
 namespace EDA_Sign
 {
@@ -25,30 +24,25 @@ namespace EDA_Sign
             protected void Page_Load(object sender, EventArgs e)
             {
 
-                if (Session["checklogin"] == null)
-                    X.Redirect("/Main_Login.aspx", "Please login ...");
-                else {
-                    string user = HttpContext.Current.Session["checklogin"].ToString();
-                    _msg = "";
-                    DBProcess_.Login_log(user, ref _msg);
-                }
+                string userID = Request.LogonUserIdentity.Name.Split('\\')[1].Trim().ToUpper(); 
+                _msg = "";
+                DBProcess_.Login_log(userID, ref _msg);
 
- 
+                //writer down license inju
+                string LicenseKey = "net,5,9999-11-11";
+                byte[] b = Encoding.Default.GetBytes(LicenseKey);
+                LicenseKey = Convert.ToBase64String(b);
+                Session["Ext.Net.LicenseKey"] = LicenseKey;
+
             }
 
-            protected void Button_Click(object sender, DirectEventArgs e)
-            {
-                Session.Clear();               
-                X.Redirect("/Main_Login.aspx","Logout and wait ...");
-           
-            }
 
 
             protected void Upload_1(object sender, EventArgs e)
             {
 
                 // upload file asp.net 元件
-                string userID = HttpContext.Current.Session["checklogin"].ToString();
+                string userID = Request.LogonUserIdentity.Name.Split('\\')[1].Trim().ToUpper(); 
                 string csvPath = Server.MapPath("~/Files/") + Path.GetFileName(FileUpload_ASP.PostedFile.FileName);//讀檔
                 FileUpload_ASP.SaveAs(csvPath);//temp file
                 DataTable dt = new DataTable();
@@ -85,17 +79,11 @@ namespace EDA_Sign
                         break;
                     }
                 }
-
- 
                   X.MessageBox.Alert("提示", "共 " + dt.Rows.Count + "筆，更新完畢。").Show();
                   System.Threading.Thread.Sleep(300);
                   Panel2.Reload();
-        
-               
   
             }
-
- 
 
         }
    

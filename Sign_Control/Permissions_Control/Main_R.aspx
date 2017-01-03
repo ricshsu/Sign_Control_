@@ -24,15 +24,6 @@
 <br /> 
  <ext:ResourceManager ID="ResourceManager_2" runat="server" />
 
-     <div class="divcss-right">
-            <ext:Button ID="Button_r" runat="server" Text="Logout" Icon="UserGo">
-                <DirectEvents>
-                    <Click OnEvent="Button_Click">
-                    </Click>
-                </DirectEvents>
-             </ext:Button>
-     </div>
-
      <div class="divcss-left" >
          <asp:FileUpload ID="FileUpload_ASP"  runat="server">
         </asp:FileUpload>
