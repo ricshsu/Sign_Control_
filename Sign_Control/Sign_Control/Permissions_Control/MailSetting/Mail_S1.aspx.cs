@@ -11,13 +11,14 @@ using System.Configuration;
 using System.Web.UI.WebControls;
 using System.Web; 
 using System.Text;
+using EDA_Sign;//for tool
 
-namespace EDA_Sign
+namespace EDA_Mail
 {
-  
-        public partial class Main_ : Init
+
+    public partial class MailS1Main_ : Init
         {
-            static string _msg = "";
+            static string _Mailmsg = "";
             static DataTable Mailmaxid;
 
 
@@ -26,8 +27,8 @@ namespace EDA_Sign
 
                 string userID = Request.LogonUserIdentity.Name.Split('\\')[1].Trim().ToUpper();
                 Session["checklogin"] = userID;
-                _msg = "";
-                DBProcess_.Login_log(userID, ref _msg);
+                _Mailmsg = "";
+                DBProcess_.Login_log(userID, ref _Mailmsg);
 
                 //writer down license inju
                 string LicenseKey = "net,5,9999-11-11";
@@ -43,7 +44,7 @@ namespace EDA_Sign
                 string csvPath = Server.MapPath("~/Files/") + Path.GetFileName(FileUpload_ASP.PostedFile.FileName);//讀檔
                 FileUpload_ASP.SaveAs(csvPath);//temp file
                 DataTable dt = new DataTable();
-                _msg = "";
+                _Mailmsg = "";
                 dt.Columns.AddRange(new DataColumn[10] { new DataColumn("Customer_ID", typeof(string)), new DataColumn("Category", typeof(string)), new DataColumn("Part", typeof(string)), new DataColumn("Part_Id", typeof(string)), new DataColumn("Yield_Impact_Item", typeof(string)), new DataColumn("Key_Module", typeof(string)), new DataColumn("Data_Source", typeof(string)), new DataColumn("Critical_Item", typeof(string)), new DataColumn("EDA_Item", typeof(string)), new DataColumn("MAIN_ID", typeof(string)) });
                 string csvData = File.ReadAllText(csvPath);
 
@@ -69,8 +70,8 @@ namespace EDA_Sign
 
                 for (int i = 1; i < dt.Rows.Count; i++) //匯入資料庫，剃除表頭
                 {
-                    DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
-                    if (_msg != "")
+                    DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _Mailmsg);
+                    if (_Mailmsg != "")
                     {
                         X.MessageBox.Alert("提示", "Import data was error format problem ").Show();
                         break;

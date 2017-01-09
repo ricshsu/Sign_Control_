@@ -7,28 +7,19 @@
 // </自動產生的>
 //------------------------------------------------------------------------------
 
-namespace EDA_Sign {
+namespace EDA_Mail {
     
     
-    public partial class Child1_ {
+    public partial class Mail_S1_Child1 {
         
         /// <summary>
-        /// Head1 控制項。
+        /// mail_ 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
-        /// <summary>
-        /// signup_ 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm signup_;
+        protected global::System.Web.UI.HtmlControls.HtmlForm mail_;
         
         /// <summary>
         /// ResourceManager1 控制項。
@@ -40,67 +31,13 @@ namespace EDA_Sign {
         protected global::Ext.Net.ResourceManager ResourceManager1;
         
         /// <summary>
-        /// FormPanel1 控制項。
+        /// Storemail 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::Ext.Net.Panel FormPanel1;
-        
-        /// <summary>
-        /// Panel2 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Panel Panel2;
-        
-        /// <summary>
-        /// Find_Category 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.TextField Find_Category;
-        
-        /// <summary>
-        /// Find_Part_Id 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.TextField Find_Part_Id;
-        
-        /// <summary>
-        /// Find_EDA_Item 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.TextField Find_EDA_Item;
-        
-        /// <summary>
-        /// btnLookup 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Button btnLookup;
-        
-        /// <summary>
-        /// Store1 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Store Store1;
+        protected global::Ext.Net.Store Storemail;
         
         /// <summary>
         /// Model1 控制項。
@@ -128,24 +65,6 @@ namespace EDA_Sign {
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
         protected global::Ext.Net.GridPanel GridPanel1;
-        
-        /// <summary>
-        /// Column5 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Column Column5;
-        
-        /// <summary>
-        /// TextField1 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.TextField TextField1;
         
         /// <summary>
         /// Column6 控制項。
@@ -265,67 +184,13 @@ namespace EDA_Sign {
         protected global::Ext.Net.Column Column12;
         
         /// <summary>
-        /// TextField8 控制項。
+        /// TextField1 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::Ext.Net.TextField TextField8;
-        
-        /// <summary>
-        /// Column13 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Column Column13;
-        
-        /// <summary>
-        /// TextField9 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.TextField TextField9;
-        
-        /// <summary>
-        /// Column14 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Column Column14;
-        
-        /// <summary>
-        /// TextField10 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.TextField TextField10;
-        
-        /// <summary>
-        /// Column15 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Column Column15;
-        
-        /// <summary>
-        /// TextField11 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.TextField TextField11;
+        protected global::Ext.Net.TextField TextField1;
         
         /// <summary>
         /// CheckboxSelectionModel1 控制項。
@@ -461,23 +326,5 @@ namespace EDA_Sign {
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
         protected global::Ext.Net.TextField Text_MAIN_ID;
-        
-        /// <summary>
-        /// btnOK 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Button btnOK;
-        
-        /// <summary>
-        /// Button1 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Button Button1;
     }
 }

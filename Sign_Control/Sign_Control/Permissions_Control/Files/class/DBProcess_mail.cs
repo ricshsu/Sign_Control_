@@ -11,7 +11,7 @@ using System.Configuration;
 
 namespace EDA_Sign
 {
-    public class DBProcess_
+    public class DBProcess_mail
     {
         static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
         static String sql;
@@ -24,8 +24,8 @@ namespace EDA_Sign
 
         public static DataTable Query_Data()
         {
-            sql = " SELECT ID,Customer_ID,Category,Part,Part_Id,Yield_Impact_Item,Key_Module,Data_Source,Critical_Item,EDA_Item,MAIN_ID";
-            sql += " FROM EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename";
+            sql = " SELECT SYSTEM_ID,USER_NOTES,MAIL_ADS,IS_SEND,IS_MODIFY,IS_CC,Name";
+            sql += " FROM EDA.dbo.Daily_Yield_OOC_MAIL_fortest";
             sql += " WHERE 1 = 1";
             _msg = "ORDER BY ID;";
             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
@@ -35,7 +35,7 @@ namespace EDA_Sign
         public static DataTable maxID()
         {
 
-            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename;";
+            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_Yield_OOC_MAIL_fortest;";
             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
@@ -43,7 +43,7 @@ namespace EDA_Sign
         public static DataTable QueryUser()
         {
 
-            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename;";
+            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_Yield_OOC_MAIL_fortest;";
             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
@@ -51,7 +51,7 @@ namespace EDA_Sign
         //上傳資料
         public static string Upload_Data(int ID, string Customer_ID, string Category, string Part, string Part_Id, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string EDA_Item, string MAIN_ID, string man, ref string _Msg)
         {
-            sql = " INSERT EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename VALUES (";
+            sql = " INSERT EDA.dbo.Daily_Yield_OOC_MAIL_fortest VALUES (";
             // sql += "  '" + ID + "'";
             sql += "  '" + Customer_ID + "'";
             sql += " , '" + Category + "'";
@@ -76,7 +76,7 @@ namespace EDA_Sign
             // STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_CriticalItem_OOC_Monitor_Main_BU_Rename','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -88,7 +88,7 @@ namespace EDA_Sign
         //單筆資料更新
         public static string Updata_Data(int ID, string Customer_ID, string Category, string Part, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string MAIN_ID, string man, ref string _Msg)
         {
-            sql = " UPDATE EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename ";
+            sql = " UPDATE EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
             sql += "SET Customer_ID='" + Customer_ID + "'";
             sql += ",Category='" + Category + "'";
             sql += ",Part='" + Part + "'";
@@ -111,7 +111,7 @@ namespace EDA_Sign
             //STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_CriticalItem_OOC_Monitor_Main_BU_Rename','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -123,7 +123,7 @@ namespace EDA_Sign
         //單筆資料刪除
         public static string Del_Data(int ID, string man, ref string _Msg)
         {
-            sql = " DELETE FROM  EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename ";
+            sql = " DELETE FROM  EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
             sql += "WHERE ID='" + ID + "'";
             sql += " ;";
 
@@ -138,7 +138,7 @@ namespace EDA_Sign
             // STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_CriticalItem_OOC_Monitor_Main_BU_Rename','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -151,7 +151,7 @@ namespace EDA_Sign
         //條件資料查詢
         public static DataTable LookupSign(string Category, string Part_Id, string EDA_Item, ref string _Msg)
         {
-            sql = " SELECT * FROM EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename ";
+            sql = " SELECT * FROM EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
             sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
             sql += " ;";
 
@@ -167,7 +167,7 @@ namespace EDA_Sign
         public static string Signcount(string Category, string Part_Id, string EDA_Item, ref string _Msg)
         {
 
-            sql = " SELECT count(*) counts FROM EDA.dbo.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename ";
+            sql = " SELECT count(*) counts FROM EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
             sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
             sql += " ;";
 
@@ -187,7 +187,7 @@ namespace EDA_Sign
         {
             sql = " insert into EDA.DBO.RECORD_STEP_LOG";
             sql += " (tablename, action, details, revisor, revise_date)";
-            sql += " values('Daily_CriticalItem_OOC_Monitor_Main_BU_Rename','login','" + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " values('Daily_Yield_OOC_MAIL_fortest','login','" + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _msg = "";
@@ -201,7 +201,7 @@ namespace EDA_Sign
 
         public static string Insert_Data(int ID, string Customer_ID, string Category, string Part,string Part_Id, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item,string eda_item, string MAIN_ID, string man, ref string _Msg)
         {
-            sql = " INSERT INTO EDA.DBO.Daily_CriticalItem_OOC_Monitor_Main_BU_Rename ";
+            sql = " INSERT INTO EDA.DBO.Daily_Yield_OOC_MAIL_fortest ";
             sql += "(CUSTOMER_ID,CATEGORY ,PART ,PART_ID ,YIELD_IMPACT_ITEM ,KEY_MODULE ,DATA_SOURCE ,CRITICAL_ITEM ,EDA_ITEM ,MAIN_ID) VALUES ";
             sql += "('" + Customer_ID + "','" + Category + "','" + Part + "','" + Part_Id + "','" + Yield_Impact_Item + "'";
             sql += ",'" + Key_Module + "','" + Data_Source + "','" + Critical_Item + "','" + eda_item + "','" + MAIN_ID+ "')";
@@ -218,7 +218,7 @@ namespace EDA_Sign
             //STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_CriticalItem_OOC_Monitor_Main_BU_Rename','Insert','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','Insert','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";

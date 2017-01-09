@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main_R.aspx.cs" Inherits="EDA_Sign.Main_" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mail_S1.aspx.cs" Inherits="EDA_Mail.MailS1Main_" %>
 <%@ Register Assembly="System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Namespace="System.Web.UI.WebControls" TagPrefix="asp" %>
 
 <%@ Import Namespace="System.Data" %>
@@ -49,14 +49,14 @@
             <Items>
 
                 <ext:Panel ID="Panel2" runat="server" Title="Update , Delete"  >
-                    <Loader ID="Loader2"  runat="server" Url="Main_R_child1.aspx" Mode="Frame" AutoLoad ="true" >
+                    <Loader ID="Loader2"  runat="server" Url="Mail_S1_Child1.aspx" Mode="Frame" AutoLoad ="true" >
                         <LoadMask ShowMask="true" />
                     </Loader>
                 </ext:Panel>
 
                 
                 <ext:Panel ID="Panel1" runat="server" Title="Create(single)"  >
-                    <Loader ID="Loader1"  runat="server" Url="Main_R_child2.aspx" Mode="Frame" AutoLoad ="true" >
+                    <Loader ID="Loader1"  runat="server" Url="Mail_S1_Child1.aspx" Mode="Frame" AutoLoad ="true" >
                         <LoadMask ShowMask="true" />
                     </Loader>
                 </ext:Panel>
