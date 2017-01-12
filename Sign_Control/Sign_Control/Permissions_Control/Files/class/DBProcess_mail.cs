@@ -9,11 +9,11 @@ using System.Data.SqlClient;
 using System.Configuration;
 
 
-namespace EDA_Sign
+namespace EDA_tool
 {
     public class DBProcess_mail
     {
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
         static String sql;
         static String sql_temp;
         static DataTable dt = new DataTable();
@@ -76,7 +76,7 @@ namespace EDA_Sign
             // STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -111,7 +111,7 @@ namespace EDA_Sign
             //STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -138,7 +138,7 @@ namespace EDA_Sign
             // STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";
@@ -187,7 +187,7 @@ namespace EDA_Sign
         {
             sql = " insert into EDA.DBO.RECORD_STEP_LOG";
             sql += " (tablename, action, details, revisor, revise_date)";
-            sql += " values('Daily_Yield_OOC_MAIL_fortest','login','" + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " values('Daily_Yield_OOC_MAIL_fortest','LOGIN','" + "','" + man + "','" + Groceries.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _msg = "";
@@ -218,7 +218,7 @@ namespace EDA_Sign
             //STEP LOG
             sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
             sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','Insert','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Tools.Get_Now() + "')";
+            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','INSERT','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
             lisSQL.Clear();
             lisSQL.Add(sql);
             _Msg = "";

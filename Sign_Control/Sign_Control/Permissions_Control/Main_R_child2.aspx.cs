@@ -11,12 +11,13 @@ using System.Configuration;
 using System.Web.UI.WebControls;
 using System.Web;
 using System.Text;
+using EDA_tool;
 
 namespace EDA_Sign
 {
-    public partial class Child2_ : Init
+    public partial class Child2_ : System.Web.UI.Page 
     {
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
         static string _msg = "";
         static DataTable dtTemp;
         static DataTable maxid;
@@ -28,16 +29,6 @@ namespace EDA_Sign
 
          protected void Page_Load(object sender, EventArgs e)
         {
-            string userID = Request.LogonUserIdentity.Name.Split('\\')[1].Trim().ToUpper();
-            Session["checklogin"] = userID;
-            _msg = "";
-            DBProcess_.Login_log(userID, ref _msg);
-
-            //writer down license inju
-            string LicenseKey = "net,5,9999-11-11";
-            byte[] b = Encoding.Default.GetBytes(LicenseKey);
-            LicenseKey = Convert.ToBase64String(b);
-            Session["Ext.Net.LicenseKey"] = LicenseKey;
 
             if (!IsPostBack)
             {
@@ -48,7 +39,7 @@ namespace EDA_Sign
 
         protected void ReFlash()
         {
-            dtTemp = DBProcess_.Query_Data();
+            dtTemp = DBProcess_sign.Query_Data();
             this.Store1.DataSource = dtTemp;
             this.Store1.DataBind();
         }
@@ -75,15 +66,15 @@ namespace EDA_Sign
 
                 _msg = "";
 
-                maxid = DBProcess_.maxID();
+                maxid = DBProcess_sign.maxID();
                 ID = int.Parse(maxid.Rows[0][0].ToString())+1;
 
 
 
-                DBProcess_.Insert_Data(ID, Customer_ID, Category, Part, Part_Id, Yield_Impact_Item, Key_Module, Data_Source, Critical_Item, EDA_Item, MAIN_ID, userID, ref  _msg);
+                DBProcess_sign.Insert_Data(ID, Customer_ID, Category, Part, Part_Id, Yield_Impact_Item, Key_Module, Data_Source, Critical_Item, EDA_Item, MAIN_ID, userID, ref  _msg);
                 ReFlash();
- 
-                String counts = DBProcess_.Signcount(Category, Part_Id, EDA_Item, ref _msg);
+
+                String counts = DBProcess_sign.Signcount(Category, Part_Id, EDA_Item, ref _msg);
                 X.MessageBox.Alert("提示", " After search , all have   " + counts + " counts ").Show();
 
             }

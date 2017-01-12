@@ -94,16 +94,18 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Main_R_child1.aspx" />
-    <Content Include="Sign_Ctrl.aspx" />
     <Content Include="Main_R_child2.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Files\class\DBProcess_.cs" />
+    <Compile Include="Files\class\DBProcess_sign.cs" />
+    <Compile Include="Files\class\DBProcess_com.cs" />
     <Compile Include="Files\class\Init.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Files\class\SQLCheck.cs" />
-    <Compile Include="Files\class\Tools.cs" />
+    <Compile Include="Files\class\Groceries.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Files\class\DBProcess_mail.cs" />
     <Compile Include="MailSetting\Mail_S1.aspx.cs">
       <DependentUpon>Mail_S1.aspx</DependentUpon>
@@ -133,13 +135,6 @@
     </Compile>
     <Compile Include="Main_R_child1.aspx.designer.cs">
       <DependentUpon>Main_R_child1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Sign_Ctrl.aspx.cs">
-      <DependentUpon>Sign_Ctrl.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Sign_Ctrl.aspx.designer.cs">
-      <DependentUpon>Sign_Ctrl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main_R_child2.aspx.cs">
       <DependentUpon>Main_R_child2.aspx</DependentUpon>

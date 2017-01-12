@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Web.UI.WebControls;
 using System.Web; 
 using System.Text;
+using EDA_tool;
 
 namespace EDA_Sign
 {
@@ -23,17 +24,6 @@ namespace EDA_Sign
 
             protected void Page_Load(object sender, EventArgs e)
             {
-
-                string userID = Request.LogonUserIdentity.Name.Split('\\')[1].Trim().ToUpper();
-                Session["checklogin"] = userID;
-                _msg = "";
-                DBProcess_.Login_log(userID, ref _msg);
-
-                //writer down license inju
-                string LicenseKey = "net,5,9999-11-11";
-                byte[] b = Encoding.Default.GetBytes(LicenseKey);
-                LicenseKey = Convert.ToBase64String(b);
-                Session["Ext.Net.LicenseKey"] = LicenseKey;
 
             }
             protected void Upload_1(object sender, EventArgs e)
@@ -64,20 +54,22 @@ namespace EDA_Sign
 
                 }
 
-                Mailmaxid = DBProcess_.maxID();
+                Mailmaxid = DBProcess_sign.maxID();
                 int countID = int.Parse(Mailmaxid.Rows[0][0].ToString()) + 1;
 
                 for (int i = 1; i < dt.Rows.Count; i++) //匯入資料庫，剃除表頭
                 {
-                    DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
+                    DBProcess_sign.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
                     if (_msg != "")
                     {
                         X.MessageBox.Alert("提示", "Import data was error format problem ").Show();
+                        Groceries.Delfile(csvPath);
                         break;
                     }
                 }
                   X.MessageBox.Alert("提示", "共 " + dt.Rows.Count + "筆，更新完畢。").Show();
                   System.Threading.Thread.Sleep(300);
+                  Groceries.Delfile(csvPath);
                   Panel2.Reload();
                   Panel1.Reload();
   

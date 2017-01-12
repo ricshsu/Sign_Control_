@@ -10,12 +10,13 @@ using System.IO;
 using System.Configuration;
 using System.Web.UI.WebControls;
 using System.Web;
+using EDA_tool;
 
 namespace EDA_Sign
 {
-    public partial class Child1_ : Init
+    public partial class Child1_ : System.Web.UI.Page 
     {
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
         static string strTableName = "";
         static string strAction = "";
         static string strDetails = "";
@@ -46,7 +47,7 @@ namespace EDA_Sign
 
         protected void ReFlash()
         {
-            dtTemp = DBProcess_.Query_Data();
+            dtTemp = DBProcess_sign.Query_Data();
             this.Store1.DataSource = dtTemp;
             this.Store1.DataBind();
         }
@@ -54,7 +55,7 @@ namespace EDA_Sign
         // After serarch data  , keep the data
         protected void LookupReFlash(string Category, string Part_Id,string  EDA_Item) {
             _msg = null;
-            dtTemp = DBProcess_.LookupSign(Category, Part_Id, EDA_Item, ref _msg);
+            dtTemp = DBProcess_sign.LookupSign(Category, Part_Id, EDA_Item, ref _msg);
             this.Store1.DataSource = dtTemp;
             this.Store1.DataBind();
         }
@@ -77,7 +78,7 @@ namespace EDA_Sign
 
             System.Threading.Thread.Sleep(300);
 
-            DBProcess_.Updata_Data(Text_Id, Text_Customer_ID, Text_Category, Text_Part, Text_Yield_Impact_Item, Text_Key_Module, Text_Data_Source, Text_Critical_Item, Text_MAIN_ID, userID, ref _msg);
+            DBProcess_sign.Updata_Data(Text_Id, Text_Customer_ID, Text_Category, Text_Part, Text_Yield_Impact_Item, Text_Key_Module, Text_Data_Source, Text_Critical_Item, Text_MAIN_ID, userID, ref _msg);
             X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful updated").Show(); 
             ReFlash();
         }
@@ -97,11 +98,11 @@ namespace EDA_Sign
             string EDA_Item_ = Find_EDA_Item.Text;
 
             _msg = "";
-            
 
-                DBProcess_.Del_Data(Text_Id, userID, ref _msg);
-                X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
-                ReFlash();     
+
+            DBProcess_sign.Del_Data(Text_Id, userID, ref _msg);
+            X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
+            ReFlash();     
 
  
 
@@ -119,7 +120,7 @@ namespace EDA_Sign
             string EDA_Item = Find_EDA_Item.Text;
             _msg = "";
             LookupReFlash(Category, Part_Id, EDA_Item);
-            String counts = DBProcess_.Signcount(Category, Part_Id, EDA_Item, ref _msg);
+            String counts = DBProcess_sign.Signcount(Category, Part_Id, EDA_Item, ref _msg);
             X.MessageBox.Alert("提示", " After search , all have   " + counts + " counts ").Show();
 
         }

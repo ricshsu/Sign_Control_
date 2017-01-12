@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\Users\n000161273\Desktop\00" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="設定檔1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+  <publishProfile publishUrl="C:\Users\n000161273\Desktop\00000" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="設定檔1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Sign_Control.dll" publishTime="01/11/2017 14:34:55" />
+    <file relUrl="MailSetting/Mail_S1_Child1.aspx" publishTime="01/09/2017 16:37:54" />
     <file relUrl="js/images/ui-bg_glass_55_fbf9ee_1x400.png" publishTime="01/05/2017 09:32:02" />
     <file relUrl="js/me.js" publishTime="01/05/2017 09:32:02" />
     <file relUrl="js/images/ui-icons_2e83ff_256x240.png" publishTime="01/05/2017 09:32:06" />
@@ -8,27 +10,27 @@
     <file relUrl="js/images/ui-icons_888888_256x240.png" publishTime="01/05/2017 09:32:07" />
     <file relUrl="js/jquery-ui.js" publishTime="01/05/2017 09:32:02" />
     <file relUrl="js/images/ui-bg_glass_95_fef1ec_1x400.png" publishTime="01/05/2017 09:32:03" />
-    <file relUrl="Sign_Ctrl.aspx" publishTime="01/05/2017 10:51:13" />
     <file relUrl="js/images/ui-bg_highlight-soft_75_cccccc_1x100.png" publishTime="01/05/2017 09:32:03" />
+    <file relUrl="bin/Sign_Control.pdb" publishTime="01/11/2017 14:34:55" />
     <file relUrl="Files/Loading.gif" publishTime="01/05/2017 09:31:53" />
     <file relUrl="js/jquery-1.9.1.js" publishTime="01/05/2017 09:32:02" />
     <file relUrl="style/Sign_style.css" publishTime="01/05/2017 09:32:21" />
     <file relUrl="bin/Ext.Net.dll" publishTime="01/02/2017 22:52:52" />
     <file relUrl="js/images/ui-bg_glass_75_dadada_1x400.png" publishTime="01/05/2017 09:32:03" />
-    <file relUrl="bin/Permissions_Control.dll" publishTime="01/05/2017 11:20:51" />
     <file relUrl="bin/Transformer.NET.dll" publishTime="01/05/2017 09:32:01" />
     <file relUrl="bin/Newtonsoft.Json.dll" publishTime="01/05/2017 09:31:57" />
-    <file relUrl="bin/Permissions_Control.pdb" publishTime="01/05/2017 11:20:50" />
     <file relUrl="packages.config" publishTime="01/02/2017 22:52:52" />
     <file relUrl="bin/Ext.Net.Utilities.dll" publishTime="01/05/2017 09:31:56" />
-    <file relUrl="Main_R.aspx" publishTime="01/05/2017 09:32:26" />
+    <file relUrl="Main_R.aspx" publishTime="01/09/2017 14:20:50" />
+    <file relUrl="MailSetting/Mail_S1.aspx" publishTime="01/09/2017 15:46:57" />
     <file relUrl="Files/backlogin.jpeg" publishTime="01/05/2017 09:31:54" />
+    <file relUrl="Main_R_child2.aspx" publishTime="01/05/2017 15:42:32" />
     <file relUrl="js/images/ui-icons_222222_256x240.png" publishTime="01/05/2017 09:32:03" />
     <file relUrl="js/images/ui-bg_glass_75_e6e6e6_1x400.png" publishTime="01/05/2017 09:32:03" />
     <file relUrl="js/images/ui-icons_cd0a0a_256x240.png" publishTime="01/05/2017 09:32:07" />
-    <file relUrl="Main_R_child1.aspx" publishTime="01/02/2017 22:52:52" />
+    <file relUrl="Main_R_child1.aspx" publishTime="01/09/2017 16:29:05" />
     <file relUrl="js/images/ui-bg_glass_65_ffffff_1x400.png" publishTime="01/05/2017 09:32:02" />
     <file relUrl="js/images/ui-icons_454545_256x240.png" publishTime="01/05/2017 09:32:06" />
-    <file relUrl="Web.config" publishTime="01/05/2017 11:21:09" />
+    <file relUrl="Web.config" publishTime="01/11/2017 14:34:55" />
   </publishProfile>
 </publishData>

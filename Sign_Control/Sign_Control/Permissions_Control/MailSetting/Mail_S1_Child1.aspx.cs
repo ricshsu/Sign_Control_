@@ -11,11 +11,11 @@ using System.Configuration;
 using System.Web.UI.WebControls;
 using System.Web;
 using System.Text;
-using EDA_Sign;//for tool
+using EDA_tool;//for tool
 
 namespace EDA_Mail
 {
-    public partial class Mail_S1_Child1 : Init
+    public partial class Mail_S1_Child1 : System.Web.UI.Page 
     {
         static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
         static string strTableName = "";

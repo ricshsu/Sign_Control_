@@ -8,12 +8,13 @@ using System.Collections;
 using System.Configuration;
 
 
-namespace EDA_Sign
+namespace EDA_tool
 {
     public class SQLCheck
     {
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
 
+        //純查詢
         public static DataTable GetDTable(string ConnStr, string Sql, ref string ErrMsg)
         {
             DataTable myDT = new DataTable();
@@ -35,6 +36,7 @@ namespace EDA_Sign
             }
         }
 
+        //異動資料庫
         public static void ExSql(IEnumerable mylist, ref string ErrMsg)
         {
             System.Collections.IEnumerator myEnumerator = mylist.GetEnumerator();

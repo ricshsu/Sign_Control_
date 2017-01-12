@@ -11,6 +11,7 @@ using System.Configuration;
 using System.Web.UI.WebControls;
 using System.Web;
 using System.Text;
+using EDA_tool;
 
 namespace EDA_Sign
 {
@@ -31,7 +32,7 @@ namespace EDA_Sign
             string userID = Request.LogonUserIdentity.Name.Split('\\')[1].Trim().ToUpper();
             Session["checklogin"] = userID;
             _msg = "";
-            DBProcess_.Login_log(userID, ref _msg);
+            DBProcess_sign.Login_log(userID, ref _msg);
 
             //writer down license inju
             string LicenseKey = "net,5,9999-11-11";
@@ -48,7 +49,7 @@ namespace EDA_Sign
 
         protected void ReFlash()
         {
-            dtTemp = DBProcess_.Query_Data();
+            dtTemp = DBProcess_sign.Query_Data();
             this.Store1.DataSource = dtTemp;
             this.Store1.DataBind();
         }
@@ -79,7 +80,7 @@ namespace EDA_Sign
 
             System.Threading.Thread.Sleep(300);
 
-            DBProcess_.Updata_Data(Text_Id, Text_Customer_ID, Text_Category, Text_Part, Text_Yield_Impact_Item, Text_Key_Module, Text_Data_Source, Text_Critical_Item, Text_MAIN_ID, userID, ref _msg);
+            DBProcess_sign.Updata_Data(Text_Id, Text_Customer_ID, Text_Category, Text_Part, Text_Yield_Impact_Item, Text_Key_Module, Text_Data_Source, Text_Critical_Item, Text_MAIN_ID, userID, ref _msg);
             X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful updated").Show(); 
             ReFlash();
         }
@@ -99,8 +100,8 @@ namespace EDA_Sign
             string EDA_Item_ = Find_EDA_Item.Text;
 
             _msg = "";
-            
-             DBProcess_.Del_Data(Text_Id, userID, ref _msg);
+
+            DBProcess_sign.Del_Data(Text_Id, userID, ref _msg);
              X.MessageBox.Alert("提示", "ID ：" + Text_Id + "  data successful delete").Show();
              ReFlash();     
 
@@ -119,12 +120,12 @@ namespace EDA_Sign
             _msg = "";
 
             // After serarch data  , keep the data
-            dtTemp = DBProcess_.LookupSign(Category, Part_Id, EDA_Item, ref _msg);
+            dtTemp = DBProcess_sign.LookupSign(Category, Part_Id, EDA_Item, ref _msg);
             this.Store1.DataSource = dtTemp;
             this.Store1.DataBind();
- 
 
-            String counts = DBProcess_.Signcount(Category, Part_Id, EDA_Item, ref _msg);
+
+            String counts = DBProcess_sign.Signcount(Category, Part_Id, EDA_Item, ref _msg);
             X.MessageBox.Alert("提示", " After search , all have   " + counts + " counts ").Show();
 
         }
@@ -160,12 +161,12 @@ namespace EDA_Sign
 
                 }
 
-                maxid = DBProcess_.maxID();
+                maxid = DBProcess_sign.maxID();
                 int countID = int.Parse(maxid.Rows[0][0].ToString()) + 1;
 
                 for (int i = 1; i < dt.Rows.Count; i++) //匯入資料庫，剃除表頭
                 {
-                    DBProcess_.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
+                    DBProcess_sign.Upload_Data(countID + i, dt.Rows[i]["Customer_ID"].ToString().Trim(), dt.Rows[i]["Category"].ToString().Trim(), dt.Rows[i]["Part"].ToString().Trim(), dt.Rows[i]["Part_Id"].ToString().Trim(), dt.Rows[i]["Yield_Impact_Item"].ToString().Trim(), dt.Rows[i]["Key_Module"].ToString().Trim(), dt.Rows[i]["Data_Source"].ToString().Trim(), dt.Rows[i]["Critical_Item"].ToString().Trim(), dt.Rows[i]["EDA_Item"].ToString().Trim(), dt.Rows[i]["MAIN_ID"].ToString().Trim(), userID, ref _msg);
                     if (_msg != "")
                     {
                         X.MessageBox.Alert("提示", "Import data was error format problem ").Show();
@@ -197,15 +198,15 @@ namespace EDA_Sign
 
                 _msg = "";
 
-                maxid = DBProcess_.maxID();
+                maxid = DBProcess_sign.maxID();
                 ID = int.Parse(maxid.Rows[0][0].ToString())+1;
 
 
 
-                DBProcess_.Insert_Data(ID, Customer_ID, Category, Part, Part_Id, Yield_Impact_Item, Key_Module, Data_Source, Critical_Item, EDA_Item, MAIN_ID, userID, ref  _msg);
+                DBProcess_sign.Insert_Data(ID, Customer_ID, Category, Part, Part_Id, Yield_Impact_Item, Key_Module, Data_Source, Critical_Item, EDA_Item, MAIN_ID, userID, ref  _msg);
                 ReFlash();
- 
-                String counts = DBProcess_.Signcount(Category, Part_Id, EDA_Item, ref _msg);
+
+                String counts = DBProcess_sign.Signcount(Category, Part_Id, EDA_Item, ref _msg);
                 X.MessageBox.Alert("提示", " After search , all have   " + counts + " counts ").Show();
 
             }
