@@ -218,7 +218,7 @@
 
 
                           <%-- update date --%> 
-                                 <Buttons> 
+                               <Buttons> 
                                 <ext:Button runat="server" ID="btnOK" Text="修改" Icon="Accept"> 
                                     <DirectEvents> 
                                         <Click OnEvent="btnUpdae_DirectClick"> 
@@ -236,16 +236,10 @@
                                     <DirectEvents> 
                                         <Click OnEvent="btnDel_DirectClick"> 
                                         <EventMask ShowMask="true" Msg="處理中..."></EventMask> 
-
-
                                          </Click> 
                                     </DirectEvents> 
                                 </ext:Button> 
                                 </Buttons> 
-
-
-
-
                             </ext:Panel> 
                         </Items> 
                       </ext:FormPanel> 

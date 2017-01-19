@@ -132,22 +132,37 @@
                         <Items>
                             <ext:Panel ID="Panel9" runat="server" Border="false" ColumnWidth="1" Layout="ColumnLayout" BodyStyle="padding:5px">
                                 <Items>
-                                    <ext:TextField ID="Text_Id" runat="server" FieldLabel="ID" Name="ID" ReadOnly="true"  />
-                                    <ext:TextField ID="Text_Customer_ID" runat="server" FieldLabel="Customer_ID" Name="Customer_ID"  Length='15' EnforceMaxLength = "true"  MaxLength = "15"/>
-                                    <ext:TextField ID="Text_Category" runat="server" FieldLabel="Category" Name="Category" EnforceMaxLength = "true"  MaxLength = "8" />
-                                    <ext:TextField ID="Text_Part" runat="server" FieldLabel="Part" Name="Part" EnforceMaxLength = "true"  MaxLength = "7"/>
-                                    <ext:TextField ID="Text_Part_Id" runat="server" FieldLabel="Part_Id" Name="Part_Id" ReadOnly="true"  />
-                                    <ext:TextField ID="Text_Yield_Impact_Item" runat="server" FieldLabel="Yield_Impact_Item" Name="Yield_Impact_Item" EnforceMaxLength = "true"  MaxLength = "15"/>
-                                    <ext:TextField ID="Text_Key_Module" runat="server" FieldLabel="Key_Module" Name="Key_Module" EnforceMaxLength = "true"  MaxLength = "15" />
-                                    <ext:TextField ID="Text_Data_Source" runat="server" FieldLabel="Data_Source" Name="Data_Source" EnforceMaxLength = "true"  MaxLength = "10" />
-                                    <ext:TextField ID="Text_Critical_Item" runat="server" FieldLabel="Critical_Item" Name="Critical_Item" EnforceMaxLength = "true"  MaxLength = "50"/>
-                                    <ext:TextField ID="Text_EDA_Item" runat="server" FieldLabel="EDA_Item" Name="EDA_Item" ReadOnly="true"  />
-                                    <ext:TextField ID="Text_MAIN_ID" runat="server" FieldLabel="MAIN_ID" Name="MAIN_ID" EnforceMaxLength = "true"  MaxLength = "2" />
+                                        <ext:TextField ID="Text_SYSTEM_ID" runat="server" FieldLabel="SYSTEM_ID" Name="SYSTEM_ID" />
+                                        <ext:TextField ID="Text_USER_NOTES"  runat="server" FieldLabel="USER_NOTES" Name="USER_NOTES" />
+                                        <ext:TextField ID="Text_MAIL_ADS" runat="server" FieldLabel="MAIL_ADS" Name="MAIL_ADS" />
+                                        <ext:TextField ID="Text_IS_SEND" runat="server" FieldLabel="IS_SEND" Name="IS_SEND" />
+                                        <ext:TextField ID="Text_IS_MODIFY"  runat="server" FieldLabel="IS_MODIFY" Name="IS_MODIFY" />
+                                        <ext:TextField ID="Text_IS_CC"  runat="server" FieldLabel="IS_CC" Name="IS_CC" />
+                                        <ext:TextField ID="Text_Name" runat="server" FieldLabel="Name" Name="Name" />
                                 </Items>
 
- 
-
-
+                                                          <Buttons> 
+                                <ext:Button runat="server" ID="btnOK" Text="修改" Icon="Accept"> 
+                                    <DirectEvents> 
+                                        <Click OnEvent="btnUpdae_DirectClick"> 
+                                        <EventMask ShowMask="true" Msg="處理中..."></EventMask> 
+                                         <ExtraParams> 
+                                                <ext:Parameter Name="Text_Customer_ID" runat="server" Value="Customer_ID"></ext:Parameter> 
+                                         </ExtraParams> 
+                                         </Click> 
+                                    </DirectEvents> 
+                                </ext:Button>   
+                                </Buttons>  
+                                 
+                                <Buttons> 
+                               <ext:Button runat="server" ID="Button1" Text="刪除" Icon="Cross"> 
+                                    <DirectEvents> 
+                                        <Click OnEvent="btnDel_DirectClick"> 
+                                        <EventMask ShowMask="true" Msg="處理中..."></EventMask> 
+                                         </Click> 
+                                    </DirectEvents> 
+                                </ext:Button> 
+                                </Buttons> 
                             </ext:Panel>
                         </Items>
                       </ext:FormPanel>

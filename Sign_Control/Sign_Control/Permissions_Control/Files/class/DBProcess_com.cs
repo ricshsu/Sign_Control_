@@ -8,7 +8,7 @@ namespace EDA_tool
 {
 	public class DBProcess_com
 	{
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
         static String sql;
         static String _Msg;
         static List<string> lisSQL = new List<string>();

@@ -13,7 +13,7 @@ namespace EDA_tool
 {
     public class DBProcess_sign
     {
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
         static String sql;
         static String sql_temp;
         static DataTable dt = new DataTable();

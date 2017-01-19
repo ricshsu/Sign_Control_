@@ -31,24 +31,6 @@ namespace EDA_Mail {
         protected global::Ext.Net.ResourceManager ResourceManager_2;
         
         /// <summary>
-        /// FileUpload_ASP 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload_ASP;
-        
-        /// <summary>
-        /// Button1 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
-        /// </remarks>
-        protected global::Ext.Net.Button Button1;
-        
-        /// <summary>
         /// TabPanel1 控制項。
         /// </summary>
         /// <remarks>

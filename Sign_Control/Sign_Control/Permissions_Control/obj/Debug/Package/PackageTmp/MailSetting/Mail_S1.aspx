@@ -12,33 +12,29 @@
 <head runat="server">
 <link rel=stylesheet type="text/css" href="./style/Sign_style.css">
  
+    <style type="text/css">
+        .style1 {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+ 
 </head>
 
 <body class= "main_body">
 
 <form id="signup_" runat="server">
 
-
+<img alt="" class="style1" src="../Files/Top_pic.png" /><br /> 
 <%--匯出資料 ext.net --%>
 
-<br /> 
+
  <ext:ResourceManager ID="ResourceManager_2" runat="server" />
 
      <div class="divcss-left" >
-         <asp:FileUpload ID="FileUpload_ASP"  runat="server">
-        </asp:FileUpload>
+ 
     </div>
     <div>
-         <ext:Button ID="Button1" runat="server" Text="CSV 上傳">
-            <DirectEvents>
-                <Click OnEvent="Upload_1">
-                    <ExtraParams>
-                         <ext:Parameter Name="Item" Value="My param" />
-                    </ExtraParams>
-                    <EventMask ShowMask="true" Msg= 'Upload... ' />
-                </Click>
-            </DirectEvents>
-        </ext:Button>
  
      </div>
 

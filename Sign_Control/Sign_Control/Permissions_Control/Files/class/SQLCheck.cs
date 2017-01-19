@@ -12,7 +12,7 @@ namespace EDA_tool
 {
     public class SQLCheck
     {
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
 
         //純查詢
         public static DataTable GetDTable(string ConnStr, string Sql, ref string ErrMsg)

@@ -13,7 +13,7 @@ namespace EDA_tool
 {
     public class DBProcess_mail
     {
-        static string connStr = System.Configuration.ConfigurationManager.AppSettings["PCBDB39"];
+        static string connStr = System.Configuration.ConfigurationManager.AppSettings["KSPCBDB10"];
         static String sql;
         static String sql_temp;
         static DataTable dt = new DataTable();
@@ -22,109 +22,26 @@ namespace EDA_tool
 
         static List<string> lisSQL = new List<string>();
 
-        public static DataTable Query_Data()
+        public static DataTable Query_Data(string SYSTEM_ID, ref string _Msg)
         {
             sql = " SELECT SYSTEM_ID,USER_NOTES,MAIL_ADS,IS_SEND,IS_MODIFY,IS_CC,Name";
             sql += " FROM EDA.dbo.Daily_Yield_OOC_MAIL_fortest";
-            sql += " WHERE 1 = 1";
+            sql += " WHERE SYSTEM_ID='" + SYSTEM_ID + "'";
+            sql += " AND 1 = 1";
             _msg = "ORDER BY ID;";
+
             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
             return dt;
         }
 
-        public static DataTable maxID()
-        {
-
-            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_Yield_OOC_MAIL_fortest;";
-            dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
-            return dt;
-        }
-
-        public static DataTable QueryUser()
-        {
-
-            sql = "select  ISNULL(MAX(ID), 0) AS MaxX from EDA.dbo.Daily_Yield_OOC_MAIL_fortest;";
-            dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
-            return dt;
-        }
-
-        //上傳資料
-        public static string Upload_Data(int ID, string Customer_ID, string Category, string Part, string Part_Id, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string EDA_Item, string MAIN_ID, string man, ref string _Msg)
-        {
-            sql = " INSERT EDA.dbo.Daily_Yield_OOC_MAIL_fortest VALUES (";
-            // sql += "  '" + ID + "'";
-            sql += "  '" + Customer_ID + "'";
-            sql += " , '" + Category + "'";
-            sql += " , '" + Part + "'";
-            sql += " , '" + Part_Id + "'";
-            sql += " , '" + Yield_Impact_Item + "'";
-            sql += " , '" + Key_Module + "'";
-            sql += " , '" + Data_Source + "'";
-            sql += " , '" + Critical_Item + "'";
-            sql += " , '" + EDA_Item + "'";
-            sql += " , '" + MAIN_ID + "'";
-            sql += "  )";
-
-            lisSQL.Clear();
-            lisSQL.Add(sql);
-            sql_temp = sql;
-            _Msg = "";
-            SQLCheck.ExSql(lisSQL, ref _Msg);
-
-            if (_Msg != "") return _Msg;
-
-            // STEP LOG
-            sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
-            sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPLOAD','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
-            lisSQL.Clear();
-            lisSQL.Add(sql);
-            _Msg = "";
-            SQLCheck.ExSql(lisSQL, ref _Msg);
-
-            return _Msg;
-        }
-
-        //單筆資料更新
-        public static string Updata_Data(int ID, string Customer_ID, string Category, string Part, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item, string MAIN_ID, string man, ref string _Msg)
-        {
-            sql = " UPDATE EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
-            sql += "SET Customer_ID='" + Customer_ID + "'";
-            sql += ",Category='" + Category + "'";
-            sql += ",Part='" + Part + "'";
-            sql += ",Yield_Impact_Item='" + Yield_Impact_Item + "'";
-            sql += ",Key_Module='" + Key_Module + "'";
-            sql += ",Data_Source='" + Data_Source + "'";
-            sql += ",Critical_Item='" + Critical_Item + "'";
-            sql += ",MAIN_ID='" + MAIN_ID + "'";
-            sql += "WHERE ID='" + ID + "'";
-            sql += " ;";
-
-            lisSQL.Clear();
-            lisSQL.Add(sql);
-            sql_temp = sql;
-            _Msg = "";
-            SQLCheck.ExSql(lisSQL, ref _Msg);
-
-            if (_Msg != "") return _Msg;
-
-            //STEP LOG
-            sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
-            sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','UPDATE_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
-            lisSQL.Clear();
-            lisSQL.Add(sql);
-            _Msg = "";
-            SQLCheck.ExSql(lisSQL, ref _Msg);
-
-            return _Msg;
-        }
-
+ 
         //單筆資料刪除
-        public static string Del_Data(int ID, string man, ref string _Msg)
+        public static string Del_Data(string SYSTEM_ID, string MAIL_ADS, string USER_NOTES, ref string _Msg)
         {
-            sql = " DELETE FROM  EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
-            sql += "WHERE ID='" + ID + "'";
+            sql = " DELETE FROM  EDA.dbo.Daily_Yield_OOC_MAIL_fortest";
+            sql += " WHERE SYSTEM_ID='" + SYSTEM_ID + "'";
+            sql += " AND (MAIL_ADS ='" + MAIL_ADS + "'";
+            sql += " OR USER_NOTES ='" + USER_NOTES + "')";
             sql += " ;";
 
             lisSQL.Clear();
@@ -134,25 +51,16 @@ namespace EDA_tool
             SQLCheck.ExSql(lisSQL, ref _Msg);
 
             if (_Msg != "") return _Msg;
-
-            // STEP LOG
-            sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
-            sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','DEL_ONE','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
-            lisSQL.Clear();
-            lisSQL.Add(sql);
-            _Msg = "";
-            SQLCheck.ExSql(lisSQL, ref _Msg);
 
             return _Msg;
         }
 
 
         //條件資料查詢
-        public static DataTable LookupSign(string Category, string Part_Id, string EDA_Item, ref string _Msg)
+        public static DataTable Lookup_(string SYSTEM_ID, string USER_NOTES, string MAIL_ADS, ref string _Msg)
         {
             sql = " SELECT * FROM EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
-            sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
+            sql += "WHERE SYSTEM_ID = '" + SYSTEM_ID + "'" + " AND ( USER_NOTES = " + "'" + USER_NOTES + "'" + "OR MAIL_ADS = " + "'" + MAIL_ADS + "')";
             sql += " ;";
 
             lisSQL.Clear();
@@ -164,47 +72,33 @@ namespace EDA_tool
             return dt;
         }
 
-        public static string Signcount(string Category, string Part_Id, string EDA_Item, ref string _Msg)
+        //查詢筆數
+        public static string Count(string SYSTEM_ID, string USER_NOTES, string MAIL_ADS, ref string _Msg)
         {
 
             sql = " SELECT count(*) counts FROM EDA.dbo.Daily_Yield_OOC_MAIL_fortest ";
-            sql += "WHERE Category = '" + Category + "'" + "or Part_Id = " + "'" + Part_Id + "'" + "or EDA_Item = " + "'" + EDA_Item + "'";
+            sql += "WHERE SYSTEM_ID = '" + SYSTEM_ID + "'" + " AND ( USER_NOTES = " + "'" + USER_NOTES + "'" + "OR MAIL_ADS = " + "'" + MAIL_ADS + "')";
             sql += " ;";
 
             lisSQL.Clear();
             lisSQL.Add(sql);
             sql_temp = sql;
             _Msg = "";
-
             dt = SQLCheck.GetDTable(connStr, sql, ref _msg);
 
             return dt.Rows[0][0].ToString();
 
         }
 
-        // LOGIN_LOG
-        public static string Login_log(string man, ref string _Msg)
-        {
-            sql = " insert into EDA.DBO.RECORD_STEP_LOG";
-            sql += " (tablename, action, details, revisor, revise_date)";
-            sql += " values('Daily_Yield_OOC_MAIL_fortest','LOGIN','" + "','" + man + "','" + Groceries.Get_Now() + "')";
-            lisSQL.Clear();
-            lisSQL.Add(sql);
-            _msg = "";
-            SQLCheck.ExSql(lisSQL, ref _Msg);
-
-            return _Msg;
-        }
-
-
+        //INERT DATA
         //single data insert 
-
-        public static string Insert_Data(int ID, string Customer_ID, string Category, string Part,string Part_Id, string Yield_Impact_Item, string Key_Module, string Data_Source, string Critical_Item,string eda_item, string MAIN_ID, string man, ref string _Msg)
+        public static string Insert_Data(string SYSTEM_ID, string USER_NOTES, string MAIL_ADS, string IS_SEND, string IS_MODIFY, string IS_CC, string Name, ref string _Msg)
         {
+
             sql = " INSERT INTO EDA.DBO.Daily_Yield_OOC_MAIL_fortest ";
-            sql += "(CUSTOMER_ID,CATEGORY ,PART ,PART_ID ,YIELD_IMPACT_ITEM ,KEY_MODULE ,DATA_SOURCE ,CRITICAL_ITEM ,EDA_ITEM ,MAIN_ID) VALUES ";
-            sql += "('" + Customer_ID + "','" + Category + "','" + Part + "','" + Part_Id + "','" + Yield_Impact_Item + "'";
-            sql += ",'" + Key_Module + "','" + Data_Source + "','" + Critical_Item + "','" + eda_item + "','" + MAIN_ID+ "')";
+            sql += "(SYSTEM_ID,USER_NOTES ,MAIL_ADS ,IS_SEND ,IS_MODIFY ,IS_CC ,Name) VALUES ";
+            sql += "('" + SYSTEM_ID + "','" + USER_NOTES + "','" + MAIL_ADS + "','" + IS_SEND + "'";
+            sql += ",'" + IS_MODIFY + "','" + IS_CC + "','" + Name + "')";
             sql += " ;";
 
             lisSQL.Clear();
@@ -213,19 +107,12 @@ namespace EDA_tool
             _Msg = "";
             SQLCheck.ExSql(lisSQL, ref _Msg);
 
-            if (_Msg != "") return _Msg;
-
-            //STEP LOG
-            sql = " INSERT INTO EDA.DBO.RECORD_STEP_LOG";
-            sql += " (TableName, Action, Details, Revisor, Revise_Date)";
-            sql += " VALUES('Daily_Yield_OOC_MAIL_fortest','INSERT','" + lisSQL[0].Replace("'", "''") + "','" + man + "','" + Groceries.Get_Now() + "')";
-            lisSQL.Clear();
-            lisSQL.Add(sql);
-            _Msg = "";
-            SQLCheck.ExSql(lisSQL, ref _Msg);
-
             return _Msg;
         }
+
+
+
+
 
     }
 }
